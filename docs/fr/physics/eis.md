@@ -15,10 +15,10 @@
 
 Contrairement aux Études 1 et 2 qui opèrent dans le **domaine temporel** (balayage en potentiel → courant I(E)), l'EIS travaille dans le **domaine fréquentiel**. Une petite perturbation sinusoïdale de potentiel est superposée au potentiel DC :
 
-$$E(t) = E_0 + \Delta E \cdot \sin(\omega t)$$
+$$E(t) = E_{ocp} + \Delta E \cdot \sin(\omega t)$$
 
 où :
-- $E_0$ = potentiel DC stationnaire [V]
+- $E_{ocp}$ = potentiel de circuit ouvert (*open circuit potential*) [V vs Ag/AgCl] — le potentiel auquel le courant net est nul. Les valeurs d'OCP par métal et pH sont documentées dans la page **Données électrochimiques**.
 - $\Delta E$ = amplitude de la perturbation (10 mV, régime linéaire)
 - $\omega = 2\pi f$ = pulsation angulaire [rad/s]
 
@@ -27,7 +27,7 @@ La réponse en courant est déphasée :
 $$I(t) = I_0 + \Delta I \cdot \sin(\omega t + \varphi)$$
 
 où :
-- $I_0$ = courant DC stationnaire [A]
+- $I_0$ = courant DC stationnaire [A] (= 0 à l'OCP par définition)
 - $\Delta I$ = amplitude de la réponse en courant [A]
 - $\varphi$ = déphasage entre le potentiel et le courant [rad]
 
@@ -60,7 +60,7 @@ $$f \in [0.01 \text{ Hz}, 100 \text{ kHz}]$$, espacement logarithmique, 10 point
 
 ### 2.1 Sélection adaptative du circuit
 
-Le modèle sélectionne automatiquement le circuit selon le pH et la composition, car la chimie de surface change radicalement avec le milieu.
+Le modèle sélectionne automatiquement le circuit selon le pH et la composition, car la chimie de surface change radicalement avec le milieu. Le critère est simple : si $R_{film} > 0$, le circuit à 2 constantes de temps (2-TC) est utilisé ; sinon, c'est un circuit de Randles.
 
 ### 2.2 Formation des oxydes
 
@@ -77,16 +77,22 @@ La nature du film passif dépend du métal et du pH. Les équations redox détai
 
 **Signature Nyquist** : 1 semicercle + droite de Warburg à 45°.
 
-### 2.4 pH 7 (neutre) — 2 constantes de temps pour au+Ni/Cu
+### 2.4 pH 7 (neutre) — circuit variable selon le métal
 
-> **Circuit** :  `Rs` → `[ CPE_film ‖ R_film ]` → `[ CPE_dl ‖ ( Rct + Z_W ) ]`
+Le comportement à pH 7 dépend du métal :
+
+**Au et Ni → Randles simple** (pas de film) :
+> `Rs` → `[ CPE_dl ‖ ( Rct + Z_W ) ]`
+
+**Cu → 2 constantes de temps** (film Cu₂O) :
+> `Rs` → `[ CPE_film ‖ R_film ]` → `[ CPE_dl ‖ ( Rct + Z_W ) ]`
 
 **Justification** :
 - Au reste nu à pH 7 (circuit Randles simple)
-- Ni passivé : film duplex NiO / Ni(OH)₂ → introduit R_film + CPE_film
-- Cu forme Cu₂O → film semi-protecteur
+- ⚠️ **Ni instable à pH 7** : le film NiOOH se dissout lentement (ACS Omega 2016). Traité comme dissolution lente, pas de R_film.
+- Cu forme Cu₂O semi-protecteur → R_film = 400 Ω
 
-**Signature Nyquist** : 2 arcs (possiblement superposés) + Warburg.
+**Signature Nyquist** : 1 arc (Au, Ni) ou 2 arcs possiblement superposés (Cu) + Warburg.
 
 ### 2.5 pH 11 (alcalin) — 2 constantes de temps pour TOUS les métaux
 
@@ -94,7 +100,7 @@ La nature du film passif dépend du métal et du pH. Les équations redox détai
 
 **Justification** :
 - **Même Au** forme un oxyde/hydroxyde de surface (Au₂O₃) en milieu alcalin (Burke & Nugent, 1997)
-- Ni : passivation profonde, film NiO/Ni(OH)₂ épais, R_film très élevé
+- Ni : passivation profonde, film NiO/Ni(OH)₂ épais, R_film très élevé (2 000 Ω)
 - Cu : film duplex Cu₂O/CuO/Cu(OH)₂
 
 **Signature Nyquist** : 2 arcs nets pour toutes les compositions + Warburg.
@@ -143,7 +149,11 @@ avec $Z_{film\parallel} = \frac{R_{film} \cdot Z_{CPE,film}}{R_{film} + Z_{CPE,f
 
 ### 4.2 Paramètres par métal et pH
 
+Les valeurs ci-dessous sont des **paramètres bibliographiques typiques à l'OCP** (pas dérivés de Butler-Volmer). Les sources détaillées sont dans la page **Données électrochimiques**, section 3.
+
 #### pH 3 (acide, dissolution active, pas de film)
+
+Tous les métaux sont en dissolution active : Rct faible pour Ni et Cu, pas de film passif.
 
 | Métal | Rs (Ω) | Rct (Ω) | Q₀ (µF·s^(n-1)/cm²) | n | σ (Ω·s^(-1/2)) |
 |-------|---------|---------|---------------------|---|----------------|
@@ -151,21 +161,31 @@ avec $Z_{film\parallel} = \frac{R_{film} \cdot Z_{CPE,film}}{R_{film} + Z_{CPE,f
 | Ni | 40 | 700 | 40 | 0.91 | 75 |
 | Cu | 40 | 500 | 50 | 0.89 | 90 |
 
-#### pH 7 (neutre, films passifs sur ni/Cu)
+*Sources : Hamelin 1994 (Au Rct), Beverskog 1997 (Ni/Cu Pourbaix).*
+
+#### pH 7 (neutre, film Cu₂O uniquement)
+
+Au reste nu, Ni est instable (pas de film stable — ACS Omega 2016), seul Cu forme un film Cu₂O semi-protecteur.
 
 | Métal | Rs (Ω) | Rct (Ω) | Q₀ | n | σ | R_film (Ω) | Q_film | n_film |
 |-------|---------|---------|-----|---|---|-----------|--------|--------|
 | Au | 60 | 5000 | 25 | 0.94 | 45 | 0 | — | — |
-| Ni | 60 | 3000 | 30 | 0.90 | 60 | 800 | 5 | 0.87 |
+| Ni | 60 | 1500 | 35 | 0.90 | 70 | 0 | — | — |
 | Cu | 60 | 2000 | 35 | 0.87 | 75 | 400 | 10 | 0.84 |
 
+*Sources : Song 2025 (Au Cdl), JACS 2024 (Cu₂O), ACS Omega 2016 (Ni instabilité).*
+
 #### pH 11 (alcalin, films sur tous les métaux)
+
+Tous les métaux forment un film passif : Au(OH)₃ (léger), Ni(OH)₂/NiOOH (épais, protecteur), Cu₂O/CuO.
 
 | Métal | Rs (Ω) | Rct (Ω) | Q₀ | n | σ | R_film (Ω) | Q_film | n_film |
 |-------|---------|---------|-----|---|---|-----------|--------|--------|
 | Au | 10 | 2000 | 35 | 0.92 | 50 | 150 | 10 | 0.90 |
 | Ni | 10 | 8000 | 25 | 0.88 | 100 | 2000 | 3 | 0.85 |
 | Cu | 10 | 4000 | 30 | 0.85 | 90 | 800 | 7 | 0.82 |
+
+*Sources : Diaz-Morales 2020 (Au oxide), Weininger 1963 (Ni film), Ambrose 1973 (Cu alcalin).*
 
 ---
 
@@ -180,6 +200,7 @@ Pour les alliages Au+Ni+Cu, les paramètres effectifs sont calculés par :
 | n | n_pondéré − 0.002·%Ni − 0.003·%Cu |
 | σ | Moyenne pondérée |
 | R_film | Moyenne pondérée |
+| E_ocp | Moyenne pondérée (approx. potentiel mixte) |
 | Rs | Identique pour tous (propriété de l'électrolyte) |
 
 ---
@@ -190,6 +211,7 @@ Pour les alliages Au+Ni+Cu, les paramètres effectifs sont calculés par :
 |---|---|---|
 | **Domaine** | Temps | **Fréquence** |
 | **Sortie** | I(E), θ(t) | **Z(ω), φ(ω)** |
+| **Potentiel** | Balayage ($E_{min}$ → $E_{max}$) | **Fixe ($E_{ocp}$)** |
 | **Transport** | Aucun (surface) | **Diffusion 1D (analytique)** |
 | **Solver** | numpy ODE | **numpy (algébrique)** |
 | **Circuit** | — | **Randles / 2-TC adaptatif** |
@@ -205,4 +227,17 @@ Pour les alliages Au+Ni+Cu, les paramètres effectifs sont calculés par :
 
 ## 7. Références bibliographiques
 
-*Note : Pour la liste complète des références, consultez la section Références bibliographiques dans le menu Annexes.*
+| # | Référence | Usage |
+|---|-----------|-------|
+| [1] | Hamelin *et al.* (1994) — *Electrochim. Acta* — Au/H₂SO₄ | Rct, Cdl Au |
+| [2] | Song *et al.* (2025) — *ChemElectroChem* | Cdl vs pH |
+| [3] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* 39, 969 | Pourbaix Ni |
+| [4] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* | Pourbaix Cu |
+| [5] | Diaz-Morales *et al.* (2020) — *ACS Catal.* 10, 7532 | Au oxide OER |
+| [6] | ACS Omega (2016) — DOI: 10.1021/acsomega.6b00448 | NiOOH instabilité |
+| [8] | Weininger & Breiter (1963) — *Electrochim. Acta* 8, 575 | Ni film EIS |
+| [9] | Ambrose *et al.* (1973) — *J. Electroanal. Chem.* 47, 47 | Cu alcalin |
+| [11] | Lazanas & Prodromidis (2023) — *ACS Meas. Sci. Au* 3(3), 162 | Tutorial EIS |
+| [12] | Gamry Instruments — "Basics of EIS" | Application Note |
+
+*Pour la liste complète : voir Références bibliographiques dans le menu Annexes.*

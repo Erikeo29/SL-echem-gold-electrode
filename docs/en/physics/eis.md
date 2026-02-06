@@ -15,10 +15,10 @@
 
 Unlike Studies 1 and 2 which operate in the **time domain** (potential sweep → current I(E)), EIS works in the **frequency domain**. A small sinusoidal potential perturbation is superimposed on the DC potential:
 
-$$E(t) = E_0 + \Delta E \cdot \sin(\omega t)$$
+$$E(t) = E_{ocp} + \Delta E \cdot \sin(\omega t)$$
 
 where:
-- $E_0$ = steady-state DC potential [V]
+- $E_{ocp}$ = open circuit potential [V vs Ag/AgCl] — the potential at which the net current is zero. OCP values per metal and pH are documented in the **Electrochemical Data** page.
 - $\Delta E$ = perturbation amplitude (10 mV, linear regime)
 - $\omega = 2\pi f$ = angular frequency [rad/s]
 
@@ -27,7 +27,7 @@ The current response is phase-shifted:
 $$I(t) = I_0 + \Delta I \cdot \sin(\omega t + \varphi)$$
 
 where:
-- $I_0$ = steady-state DC current [A]
+- $I_0$ = steady-state DC current [A] (= 0 at OCP by definition)
 - $\Delta I$ = current response amplitude [A]
 - $\varphi$ = phase shift between potential and current [rad]
 
@@ -60,7 +60,7 @@ $$f \in [0.01 \text{ Hz}, 100 \text{ kHz}]$$, logarithmic spacing, 10 points/dec
 
 ### 2.1 Adaptive Circuit Selection
 
-The model automatically selects the circuit based on pH and composition, as surface chemistry changes dramatically with the medium.
+The model automatically selects the circuit based on pH and composition, as surface chemistry changes dramatically with the medium. The criterion is simple: if $R_{film} > 0$, the 2 time-constant (2-TC) circuit is used; otherwise, a Randles circuit.
 
 ### 2.2 Oxide Formation
 
@@ -77,16 +77,22 @@ The nature of the passive film depends on the metal and pH. Detailed redox equat
 
 **Nyquist signature**: 1 semicircle + 45° Warburg line.
 
-### 2.4 pH 7 (neutral) — 2 Time Constants for Au+Ni/Cu
+### 2.4 pH 7 (neutral) — variable circuit depending on metal
 
-> **Circuit**:  `Rs` → `[ CPE_film ‖ R_film ]` → `[ CPE_dl ‖ ( Rct + Z_W ) ]`
+The behavior at pH 7 depends on the metal:
+
+**Au and Ni → simple Randles** (no film):
+> `Rs` → `[ CPE_dl ‖ ( Rct + Z_W ) ]`
+
+**Cu → 2 time constants** (Cu₂O film):
+> `Rs` → `[ CPE_film ‖ R_film ]` → `[ CPE_dl ‖ ( Rct + Z_W ) ]`
 
 **Justification**:
 - Au remains bare at pH 7 (simple Randles circuit)
-- Ni passivated: duplex film NiO / Ni(OH)₂ → introduces R_film + CPE_film
-- Cu forms Cu₂O → semi-protective film
+- ⚠️ **Ni unstable at pH 7**: the NiOOH film dissolves slowly (ACS Omega 2016). Treated as slow dissolution, no R_film.
+- Cu forms semi-protective Cu₂O → R_film = 400 Ω
 
-**Nyquist signature**: 2 arcs (possibly overlapping) + Warburg.
+**Nyquist signature**: 1 arc (Au, Ni) or 2 possibly overlapping arcs (Cu) + Warburg.
 
 ### 2.5 pH 11 (alkaline) — 2 Time Constants for ALL metals
 
@@ -94,7 +100,7 @@ The nature of the passive film depends on the metal and pH. Detailed redox equat
 
 **Justification**:
 - **Even Au** forms a surface oxide/hydroxide (Au₂O₃) in alkaline media (Burke & Nugent, 1997)
-- Ni: deep passivation, thick NiO/Ni(OH)₂ film, very high R_film
+- Ni: deep passivation, thick NiO/Ni(OH)₂ film, very high R_film (2,000 Ω)
 - Cu: duplex film Cu₂O/CuO/Cu(OH)₂
 
 **Nyquist signature**: 2 clear arcs for all compositions + Warburg.
@@ -117,11 +123,21 @@ The CPE (Constant Phase Element) replaces the ideal capacitance to model real su
 - $n = 0.8\text{–}0.95$ → rough, heterogeneous surface
 - $n < 0.8$ → distribution of time constants, highly disordered surface
 
+### Randles Circuit
+
+$$Z(\omega) = R_s + \frac{1}{\frac{1}{Z_{CPE}} + \frac{1}{R_{ct} + Z_W}}$$
+
+### 2 Time-Constant Circuit
+
+$$Z(\omega) = R_s + Z_{film\parallel} + Z_{dl\parallel}$$
+
+with $Z_{film\parallel} = \frac{R_{film} \cdot Z_{CPE,film}}{R_{film} + Z_{CPE,film}}$ and $Z_{dl\parallel} = \frac{(R_{ct} + Z_W) \cdot Z_{CPE,dl}}{(R_{ct} + Z_W) + Z_{CPE,dl}}$
+
 ---
 
 ## 4. Physical Parameters
 
-### Constants
+### 4.1 Constants
 
 | Parameter | Value | Unit |
 |-----------|-------|------|
@@ -131,9 +147,13 @@ The CPE (Constant Phase Element) replaces the ideal capacitance to model real su
 | n (electrons) | 1 | — |
 | A (area) | 1.77×10⁻⁶ | m² |
 
-### Parameters by metal and pH
+### 4.2 Parameters by metal and pH
+
+The values below are **typical bibliographic parameters at OCP** (not derived from Butler-Volmer). Detailed sources are in the **Electrochemical Data** page, section 3.
 
 #### pH 3 (acidic, active dissolution, no film)
+
+All metals are in active dissolution: low Rct for Ni and Cu, no passive film.
 
 | Metal | Rs (Ω) | Rct (Ω) | Q₀ (µF·s^(n-1)/cm²) | n | σ (Ω·s^(-1/2)) |
 |-------|---------|---------|---------------------|---|----------------|
@@ -141,21 +161,31 @@ The CPE (Constant Phase Element) replaces the ideal capacitance to model real su
 | Ni | 40 | 700 | 40 | 0.91 | 75 |
 | Cu | 40 | 500 | 50 | 0.89 | 90 |
 
-#### pH 7 (neutral, passive films on Ni/Cu)
+*Sources: Hamelin 1994 (Au Rct), Beverskog 1997 (Ni/Cu Pourbaix).*
+
+#### pH 7 (neutral, Cu₂O film only)
+
+Au remains bare, Ni is unstable (no stable film — ACS Omega 2016), only Cu forms a semi-protective Cu₂O film.
 
 | Metal | Rs (Ω) | Rct (Ω) | Q₀ | n | σ | R_film (Ω) | Q_film | n_film |
 |-------|---------|---------|-----|---|---|-----------|--------|--------|
 | Au | 60 | 5000 | 25 | 0.94 | 45 | 0 | — | — |
-| Ni | 60 | 3000 | 30 | 0.90 | 60 | 800 | 5 | 0.87 |
+| Ni | 60 | 1500 | 35 | 0.90 | 70 | 0 | — | — |
 | Cu | 60 | 2000 | 35 | 0.87 | 75 | 400 | 10 | 0.84 |
 
+*Sources: Song 2025 (Au Cdl), JACS 2024 (Cu₂O), ACS Omega 2016 (Ni instability).*
+
 #### pH 11 (alkaline, films on all metals)
+
+All metals form a passive film: Au(OH)₃ (thin), Ni(OH)₂/NiOOH (thick, protective), Cu₂O/CuO.
 
 | Metal | Rs (Ω) | Rct (Ω) | Q₀ | n | σ | R_film (Ω) | Q_film | n_film |
 |-------|---------|---------|-----|---|---|-----------|--------|--------|
 | Au | 10 | 2000 | 35 | 0.92 | 50 | 150 | 10 | 0.90 |
 | Ni | 10 | 8000 | 25 | 0.88 | 100 | 2000 | 3 | 0.85 |
 | Cu | 10 | 4000 | 30 | 0.85 | 90 | 800 | 7 | 0.82 |
+
+*Sources: Diaz-Morales 2020 (Au oxide), Weininger 1963 (Ni film), Ambrose 1973 (Cu alkaline).*
 
 ---
 
@@ -170,6 +200,7 @@ For Au+Ni+Cu alloys, effective parameters are computed by:
 | n | n_weighted − 0.002·%Ni − 0.003·%Cu |
 | σ | Weighted average |
 | R_film | Weighted average |
+| E_ocp | Weighted average (mixed-potential approx.) |
 | Rs | Same for all (electrolyte property) |
 
 ---
@@ -180,6 +211,7 @@ For Au+Ni+Cu alloys, effective parameters are computed by:
 |---|---|---|
 | **Domain** | Time | **Frequency** |
 | **Output** | I(E), θ(t) | **Z(ω), φ(ω)** |
+| **Potential** | Sweep ($E_{min}$ → $E_{max}$) | **Fixed ($E_{ocp}$)** |
 | **Transport** | None (surface) | **1D diffusion (analytical)** |
 | **Solver** | numpy ODE | **numpy (algebraic)** |
 | **Circuit** | — | **Randles / 2-TC adaptive** |
@@ -195,4 +227,17 @@ For Au+Ni+Cu alloys, effective parameters are computed by:
 
 ## 7. Bibliographical References
 
-*Note: For the complete list of references, see the Bibliographical References section in the Annexes menu.*
+| # | Reference | Usage |
+|---|-----------|-------|
+| [1] | Hamelin *et al.* (1994) — *Electrochim. Acta* — Au/H₂SO₄ | Rct, Cdl Au |
+| [2] | Song *et al.* (2025) — *ChemElectroChem* | Cdl vs pH |
+| [3] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* 39, 969 | Pourbaix Ni |
+| [4] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* | Pourbaix Cu |
+| [5] | Diaz-Morales *et al.* (2020) — *ACS Catal.* 10, 7532 | Au oxide OER |
+| [6] | ACS Omega (2016) — DOI: 10.1021/acsomega.6b00448 | NiOOH instability |
+| [8] | Weininger & Breiter (1963) — *Electrochim. Acta* 8, 575 | Ni film EIS |
+| [9] | Ambrose *et al.* (1973) — *J. Electroanal. Chem.* 47, 47 | Cu alkaline |
+| [11] | Lazanas & Prodromidis (2023) — *ACS Meas. Sci. Au* 3(3), 162 | EIS Tutorial |
+| [12] | Gamry Instruments — "Basics of EIS" | Application Note |
+
+*For the complete list, see Bibliographical References in the Appendices menu.*

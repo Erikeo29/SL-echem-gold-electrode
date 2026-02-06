@@ -70,6 +70,58 @@
     J. Open Source Softw. **2020**, 5(52), 2349.
     - [Article (JOSS)](https://joss.theoj.org/papers/10.21105/joss.02349)
 
+10. **Hamelin, A. et al.**
+    *"Capacitance of the gold electrode in 0.5 M H₂SO₄."*
+    Electrochim. Acta **1994**.
+    - Rct and Cdl parameters for Au in acidic media.
+
+11. **Beverskog, B.; Puigdomenech, I.**
+    *"Revised Pourbaix diagrams for nickel at 25–300 °C."*
+    Corros. Sci. **1997**, 39, 969-980.
+    - [DOI: 10.1016/S0010-938X(97)00002-4](https://doi.org/10.1016/S0010-938X(97)00002-4)
+    - Ni Pourbaix diagram, OCP as a function of pH.
+
+12. **Beverskog, B.; Puigdomenech, I.**
+    *"Revised Pourbaix diagrams for copper at 25–300 °C."*
+    Corros. Sci. **1997**.
+    - [DOI: 10.1016/S0010-938X(97)00043-X](https://doi.org/10.1016/S0010-938X(97)00043-X)
+    - Cu Pourbaix diagram, OCP as a function of pH.
+
+13. **Diaz-Morales, O. et al.**
+    *"Gold-catalyzed oxygen evolution reaction."*
+    ACS Catal. **2020**, 10, 7532.
+    - [DOI: 10.1021/acscatal.0c03548](https://doi.org/10.1021/acscatal.0c03548)
+    - β-oxide Au(OH)₃ film in alkaline media.
+
+14. **ACS Omega**
+    *"NiOOH instability at neutral pH."*
+    ACS Omega **2016**.
+    - [DOI: 10.1021/acsomega.6b00448](https://doi.org/10.1021/acsomega.6b00448)
+    - NiOOH film instability at neutral pH.
+
+15. **Weininger, J. L.; Breiter, M. W.**
+    *"Electrochemical impedance of nickel oxide electrode."*
+    Electrochim. Acta **1963**, 8, 575.
+    - Ni(OH)₂ film parameters in alkaline media.
+
+16. **Ambrose, J. et al.**
+    *"Investigation of copper in alkaline solutions."*
+    J. Electroanal. Chem. **1973**, 47, 47.
+    - [DOI: 10.1016/S0022-0728(73)80344-4](https://doi.org/10.1016/S0022-0728(73)80344-4)
+    - Cu₂O/CuO film in alkaline media.
+
+17. **Song, H. et al.**
+    *"Double-layer capacitance vs pH for Pt and Au."*
+    ChemElectroChem **2025**.
+    - [DOI: 10.1002/celc.202400587](https://doi.org/10.1002/celc.202400587)
+    - Cdl vs pH for Au electrodes.
+
+18. **Jerkiewicz, G. et al.**
+    *"Surface oxidation of noble metals."*
+    Electrochem. Commun. **1999**, 1, 419.
+    - [DOI: 10.1016/S1388-2481(99)00062-4](https://doi.org/10.1016/S1388-2481(99)00062-4)
+    - Au oxide in acidic media.
+
 ---
 
 ## 4. Numerical Simulation

@@ -2,9 +2,10 @@
 
 **Sommaire :**
 1. Constantes fondamentales
-2. Oxydes métalliques (études 1 & 2)
-3. Murs électrochimiques (HER/OER)
-4. Hypothèses et limites des modèles
+2. Oxydes de surface et cinétique (étude 1 — CV)
+3. Paramètres d'impédance à l'OCP (étude 2 — EIS)
+4. Murs électrochimiques (HER/OER)
+5. Hypothèses et limites des modèles
 
 ---
 
@@ -16,10 +17,11 @@
 | Constante des gaz | $R$ | 8.314 | J/(mol·K) |
 | Température standard | $T$ | 298.15 | K (25°C) |
 | $f = F/RT$ | $f$ | 38.94 | V⁻¹ |
+| Surface d'électrode | $A$ | 1.77×10⁻⁶ | m² |
 
 ---
 
-## 2. Oxydes métalliques (études 1 & 2)
+## 2. Oxydes de surface et cinétique (étude 1 — CV)
 
 ### Équations redox de formation des oxydes
 
@@ -101,7 +103,73 @@ où $M$ = Au, Ni, ou Cu.
 
 ---
 
-## 3. Murs électrochimiques (HER/OER)
+## 3. Paramètres d'impédance à l'OCP (étude 2 — EIS)
+
+### 3.1 Potentiel de circuit ouvert (OCP)
+
+L'EIS est réalisée au **potentiel de circuit ouvert** (OCP, *open circuit potential*), c'est-à-dire le potentiel auquel le courant net traversant l'électrode est nul. Ce potentiel résulte de l'équilibre entre réactions anodiques et cathodiques à la surface ; il dépend donc du métal et du pH.
+
+Les valeurs ci-dessous sont estimées à partir des **diagrammes de Pourbaix** et de mesures expérimentales publiées :
+
+| Métal | pH 3 | pH 7 | pH 11 | Domaine Pourbaix à l'OCP | Sources |
+|-------|:----:|:----:|:-----:|--------------------------|---------|
+| **Au** | +0.50 V | +0.15 V | −0.10 V | Capacitif (pas d'oxyde) | Hamelin 1994 [1], Song 2025 [2] |
+| **Ni** | −0.25 V | −0.20 V | +0.10 V | Corrosion → dissolution → passivation | Beverskog 1997 [3] |
+| **Cu** | +0.02 V | −0.20 V | −0.40 V | Cu²⁺ → Cu₂O → Cu₂O/CuO | Beverskog 1997 [4], Ambrose 1973 [9] |
+
+> Potentiels **vs Ag/AgCl (KCl sat.)**. Pour les alliages : $E_{ocp} \approx \sum x_i \cdot E_{ocp,i}$ (approximation de potentiel mixte).
+
+**Interprétation** :
+- **Au** est noble : son OCP reste positif en milieu acide et neutre, dans le domaine capacitif (pas de réaction faradique). À pH 11, il descend juste en dessous du seuil de formation du β-oxide Au(OH)₃, d'où l'apparition d'un film passif.
+- **Ni** a l'OCP le plus négatif à pH 3 (dissolution active Ni → Ni²⁺). En milieu alcalin, la formation du film Ni(OH)₂ stabilise la surface et l'OCP remonte en zone passive.
+- **Cu** suit la transition Cu/Cu²⁺ (acide) → Cu/Cu₂O (neutre/alcalin), en accord avec les diagrammes de Pourbaix. À pH 7, l'OCP est proche de −0.20 V, cohérent avec le potentiel de stabilité de Cu₂O mesuré par méthodes pulsées (JACS 2024 : −0.27 V).
+
+### 3.2 Résistance de transfert de charge (Rct)
+
+Le Rct traduit la vitesse de la réaction faradique à l'OCP. Il est relié au courant d'échange par la relation de Butler-Volmer linéarisée : $R_{ct} = RT/(nFi_0)$. Un Rct élevé signifie une interface peu réactive (cinétique lente ou film protecteur).
+
+| pH | Au (Ω) | Ni (Ω) | Cu (Ω) | Tendance physique |
+|:--:|:------:|:------:|:------:|-------------------|
+| 3 | 1 200 | 700 | 500 | Ni/Cu dissolvent activement → Rct faible |
+| 7 | 5 000 | 1 500 | 2 000 | Au inerte → Rct élevé ; Ni instable sans film |
+| 11 | 2 000 | 8 000 | 4 000 | Ni : film Ni(OH)₂ très protecteur → Rct ×10 |
+
+Sources : Hamelin 1994 [1] (Au/H₂SO₄), Beverskog 1997 [3,4] (Pourbaix Ni/Cu), Weininger 1963 [8] (Ni/NaOH), Ambrose 1973 [9] (Cu alcalin).
+
+> **Validation** : le Rct mesuré expérimentalement sur Au polycristallin dans H₂SO₄ donne 900–1 300 Ω·cm² (Piela & Wrona, *Electrochim. Acta* 1995). Pour Ni en milieu acide, Saleh *et al.* (*Sci. Rep.* 2025) rapportent 900–990 Ω·cm² — nos 700 Ω sont dans la gamme basse, cohérent avec un pH plus acide.
+
+### 3.3 Film passif et capacité de double couche
+
+**R_film** — Nul à pH 3 (pas de film : dissolution active), il apparaît dès que le métal se passive :
+
+| pH | Au | Ni | Cu | Commentaire |
+|:--:|:--:|:--:|:--:|-------------|
+| 3 | 0 | 0 | 0 | Tous en dissolution, pas de film stable |
+| 7 | 0 | 0 ⚠️ | 400 Ω | ⚠️ Ni instable à pH 7 (ACS Omega 2016 [6]) |
+| 11 | 150 Ω | 2 000 Ω | 800 Ω | Films stables sur tous les métaux |
+
+Le R_film de Ni à pH 11 (2 000 Ω) est le plus élevé, reflétant un film Ni(OH)₂/NiOOH compact et protecteur — cohérent avec les mesures de Weininger & Breiter (1963) sur Ni en NaOH.
+
+**Q₀ (CPE)** — Capacité de double couche non idéale : 25–50 µF·s^(n-1)/cm² avec exposant $n \approx 0.85$–$0.94$. Ces valeurs sont typiques d'électrodes polycristallines (Lazanas 2023 [11]). L'exposant $n$ diminue avec l'augmentation de Ni et Cu dans l'alliage (surface plus hétérogène).
+
+> Les paramètres complets (Q₀, n, σ, Q_film, n_film) et les lois de mélange pour alliages sont détaillés dans l'onglet **Physique** de l'étude EIS.
+
+### Références EIS
+
+| # | Référence | Donnée utilisée |
+|---|-----------|-----------------|
+| [1] | Hamelin *et al.* (1994) — *Electrochim. Acta* — Au dans H₂SO₄ | Rct Au pH 3, Cdl Au |
+| [2] | Song *et al.* (2025) — *ChemElectroChem* | Cdl vs pH pour Au |
+| [3] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* 39, 969 | Pourbaix Ni, OCP Ni |
+| [4] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* | Pourbaix Cu, OCP Cu |
+| [6] | ACS Omega (2016) — DOI: 10.1021/acsomega.6b00448 | Instabilité NiOOH pH 7 |
+| [8] | Weininger & Breiter (1963) — *Electrochim. Acta* 8, 575 | Rct Ni, R_film Ni pH 11 |
+| [9] | Ambrose *et al.* (1973) — *J. Electroanal. Chem.* 47, 47 | R_film Cu alcalin |
+| [11] | Lazanas & Prodromidis (2023) — *ACS Meas. Sci. Au* 3(3), 162 | CPE, gammes typiques |
+
+---
+
+## 4. Murs électrochimiques (HER/OER)
 
 ### Réactions
 
@@ -125,9 +193,9 @@ $$E_{OER}(pH) = +1.50 - 0.059 \times pH \text{ V}$$
 
 ---
 
-## 4. Hypothèses et limites des modèles
+## 5. Hypothèses et limites des modèles
 
-### Études 1 & 2 — Oxydes de surface
+### Étude 1 — CV oxydes de surface
 
 | Hypothèse | Justification | Limitation |
 |-----------|---------------|------------|
@@ -137,14 +205,25 @@ $$E_{OER}(pH) = +1.50 - 0.059 \times pH \text{ V}$$
 | Ni partiel à pH 7 | Ni(OH)₂/NiOOH visible mais faible | Signal chevauche plateau Au |
 | Ni/Cu dissolution pH < 2 | Diagramme de Pourbaix | Pas de retour cathodique |
 
-### Ce que le modèle **ne capture pas**
+### Étude 2 — EIS à l'OCP
+
+| Hypothèse | Justification | Limitation |
+|-----------|---------------|------------|
+| **Simulation à l'OCP** | État stationnaire reproductible | Pas d'exploration d'autres potentiels |
+| **OCP par potentiel mixte** | $E_{ocp} = \sum x_i E_{ocp,i}$ | Ignore interactions galvaniques |
+| **Rct bibliographiques** | Valeurs typiques publiées | Pas dérivés de Butler-Volmer |
+| **CPE au lieu de C pure** | Surfaces réelles rugueuses | n empirique, pas relié à la géométrie |
+| **Ni instable à pH 7** | ACS Omega 2016, Pourbaix | Simplifié (pas de film transitoire) |
+
+### Ce que les modèles **ne capturent pas**
 
 - Nucléation et croissance des oxydes
 - Restructuration de surface
 - Effets de grain et orientation cristalline
 - Cinétique de diffusion dans l'oxyde
-- Interactions métal-métal dans les alliages
+- Interactions métal-métal dans les alliages (couplage galvanique)
+- Dépendance en potentiel des paramètres EIS (Rct varie avec E)
 
 ---
 
-*Ces données proviennent de parameters_oxide.py (run 07, 2026-02-05) — source unique de vérité.*
+*Étude 1 : parameters_oxide.py — Étude 2 : parameters_eis.py (run 04_EIS_with_OCP, 2026-02-06).*

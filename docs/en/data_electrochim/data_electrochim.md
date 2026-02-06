@@ -2,9 +2,10 @@
 
 **Contents:**
 1. Fundamental constants
-2. Metal oxides (studies 1 & 2)
-3. Electrochemical walls (HER/OER)
-4. Model hypotheses and limitations
+2. Surface oxides and kinetics (study 1 — CV)
+3. Impedance parameters at OCP (study 2 — EIS)
+4. Electrochemical walls (HER/OER)
+5. Model hypotheses and limitations
 
 ---
 
@@ -16,10 +17,11 @@
 | Gas constant | $R$ | 8.314 | J/(mol·K) |
 | Standard temperature | $T$ | 298.15 | K (25°C) |
 | $f = F/RT$ | $f$ | 38.94 | V⁻¹ |
+| Electrode area | $A$ | 1.77×10⁻⁶ | m² |
 
 ---
 
-## 2. Metal oxides (studies 1 & 2)
+## 2. Surface oxides and kinetics (study 1 — CV)
 
 ### Oxide formation redox equations
 
@@ -101,7 +103,73 @@ where $M$ = Au, Ni, or Cu.
 
 ---
 
-## 3. Electrochemical walls (HER/OER)
+## 3. Impedance parameters at OCP (study 2 — EIS)
+
+### 3.1 Open circuit potential (OCP)
+
+EIS measurements are performed at the **open circuit potential** (OCP), i.e. the potential at which the net current through the electrode is zero. This potential results from the balance between anodic and cathodic reactions at the surface; it therefore depends on the metal and pH.
+
+The values below are estimated from **Pourbaix diagrams** and published experimental data:
+
+| Metal | pH 3 | pH 7 | pH 11 | Pourbaix domain at OCP | Sources |
+|-------|:----:|:----:|:-----:|------------------------|---------|
+| **Au** | +0.50 V | +0.15 V | −0.10 V | Capacitive (no oxide) | Hamelin 1994 [1], Song 2025 [2] |
+| **Ni** | −0.25 V | −0.20 V | +0.10 V | Corrosion → dissolution → passivation | Beverskog 1997 [3] |
+| **Cu** | +0.02 V | −0.20 V | −0.40 V | Cu²⁺ → Cu₂O → Cu₂O/CuO | Beverskog 1997 [4], Ambrose 1973 [9] |
+
+> Potentials **vs Ag/AgCl (sat. KCl)**. For alloys: $E_{ocp} \approx \sum x_i \cdot E_{ocp,i}$ (mixed-potential approximation).
+
+**Interpretation**:
+- **Au** is noble: its OCP remains positive in acidic and neutral media, within the capacitive domain (no faradaic reaction). At pH 11, it drops just below the β-oxide Au(OH)₃ formation threshold, hence a passive film appears.
+- **Ni** has the most negative OCP at pH 3 (active dissolution Ni → Ni²⁺). In alkaline media, Ni(OH)₂ film formation stabilizes the surface and the OCP rises into the passive zone.
+- **Cu** follows the Cu/Cu²⁺ (acidic) → Cu/Cu₂O (neutral/alkaline) transition, consistent with Pourbaix diagrams. At pH 7, the OCP is close to −0.20 V, consistent with Cu₂O stability potential measured by pulsed methods (JACS 2024: −0.27 V).
+
+### 3.2 Charge transfer resistance (Rct)
+
+Rct reflects the speed of the faradaic reaction at OCP. It is related to the exchange current by the linearized Butler-Volmer equation: $R_{ct} = RT/(nFi_0)$. A high Rct indicates a poorly reactive interface (slow kinetics or protective film).
+
+| pH | Au (Ω) | Ni (Ω) | Cu (Ω) | Physical trend |
+|:--:|:------:|:------:|:------:|----------------|
+| 3 | 1,200 | 700 | 500 | Ni/Cu dissolve actively → low Rct |
+| 7 | 5,000 | 1,500 | 2,000 | Au inert → high Rct; Ni unstable without film |
+| 11 | 2,000 | 8,000 | 4,000 | Ni: highly protective Ni(OH)₂ film → Rct ×10 |
+
+Sources: Hamelin 1994 [1] (Au/H₂SO₄), Beverskog 1997 [3,4] (Pourbaix Ni/Cu), Weininger 1963 [8] (Ni/NaOH), Ambrose 1973 [9] (Cu alkaline).
+
+> **Validation**: Rct measured experimentally on polycrystalline Au in H₂SO₄ gives 900–1,300 Ω·cm² (Piela & Wrona, *Electrochim. Acta* 1995). For Ni in acidic media, Saleh *et al.* (*Sci. Rep.* 2025) report 900–990 Ω·cm² — our 700 Ω is in the lower range, consistent with a more acidic pH.
+
+### 3.3 Passive film and double-layer capacitance
+
+**R_film** — Zero at pH 3 (no film: active dissolution), it appears as soon as the metal passivates:
+
+| pH | Au | Ni | Cu | Comment |
+|:--:|:--:|:--:|:--:|---------|
+| 3 | 0 | 0 | 0 | All dissolving, no stable film |
+| 7 | 0 | 0 ⚠️ | 400 Ω | ⚠️ Ni unstable at pH 7 (ACS Omega 2016 [6]) |
+| 11 | 150 Ω | 2,000 Ω | 800 Ω | Stable films on all metals |
+
+Ni's R_film at pH 11 (2,000 Ω) is the highest, reflecting a compact and protective Ni(OH)₂/NiOOH film — consistent with Weininger & Breiter (1963) measurements on Ni in NaOH.
+
+**Q₀ (CPE)** — Non-ideal double-layer capacitance: 25–50 µF·s^(n-1)/cm² with exponent $n \approx 0.85$–$0.94$. These values are typical for polycrystalline electrodes (Lazanas 2023 [11]). The exponent $n$ decreases with increasing Ni and Cu content in the alloy (more heterogeneous surface).
+
+> Full parameters (Q₀, n, σ, Q_film, n_film) and alloy mixing laws are detailed in the **Physics** tab of the EIS study.
+
+### EIS references
+
+| # | Reference | Data used |
+|---|-----------|-----------|
+| [1] | Hamelin *et al.* (1994) — *Electrochim. Acta* — Au in H₂SO₄ | Rct Au pH 3, Cdl Au |
+| [2] | Song *et al.* (2025) — *ChemElectroChem* | Cdl vs pH for Au |
+| [3] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* 39, 969 | Pourbaix Ni, OCP Ni |
+| [4] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* | Pourbaix Cu, OCP Cu |
+| [6] | ACS Omega (2016) — DOI: 10.1021/acsomega.6b00448 | NiOOH instability at pH 7 |
+| [8] | Weininger & Breiter (1963) — *Electrochim. Acta* 8, 575 | Rct Ni, R_film Ni pH 11 |
+| [9] | Ambrose *et al.* (1973) — *J. Electroanal. Chem.* 47, 47 | R_film Cu alkaline |
+| [11] | Lazanas & Prodromidis (2023) — *ACS Meas. Sci. Au* 3(3), 162 | CPE, typical ranges |
+
+---
+
+## 4. Electrochemical walls (HER/OER)
 
 ### Reactions
 
@@ -125,9 +193,9 @@ $$E_{OER}(pH) = +1.50 - 0.059 \times pH \text{ V}$$
 
 ---
 
-## 4. Model hypotheses and limitations
+## 5. Model hypotheses and limitations
 
-### Studies 1 & 2 — Surface oxides
+### Study 1 — surface oxide CV
 
 | Hypothesis | Justification | Limitation |
 |------------|---------------|------------|
@@ -137,14 +205,25 @@ $$E_{OER}(pH) = +1.50 - 0.059 \times pH \text{ V}$$
 | Ni partial at pH 7 | Ni(OH)₂/NiOOH visible but weak | Signal overlaps with Au plateau |
 | Ni/Cu dissolution at pH < 2 | Pourbaix diagram | No cathodic return |
 
-### What the model **does not capture**
+### Study 2 — EIS at OCP
+
+| Hypothesis | Justification | Limitation |
+|------------|---------------|------------|
+| **Simulation at OCP** | Reproducible steady state | No exploration of other potentials |
+| **OCP by mixed potential** | $E_{ocp} = \sum x_i E_{ocp,i}$ | Ignores galvanic interactions |
+| **Bibliographic Rct** | Published typical values | Not derived from Butler-Volmer |
+| **CPE instead of pure C** | Real rough surfaces | n empirical, not linked to geometry |
+| **Ni unstable at pH 7** | ACS Omega 2016, Pourbaix | Simplified (no transient film) |
+
+### What the models **do not capture**
 
 - Oxide nucleation and growth
 - Surface restructuring
 - Grain and crystalline orientation effects
 - Diffusion kinetics within the oxide
-- Metal-metal interactions in alloys
+- Metal-metal interactions in alloys (galvanic coupling)
+- Potential dependence of EIS parameters (Rct varies with E)
 
 ---
 
-*These data come from parameters_oxide.py (run 07, 2026-02-05) — single source of truth.*
+*Study 1: parameters_oxide.py — Study 2: parameters_eis.py (run 04_EIS_with_OCP, 2026-02-06).*
