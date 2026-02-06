@@ -7,6 +7,7 @@ pH: 11.0
 f_min_Hz: 0.01
 f_max_Hz: 100000.0
 n_points_per_decade: 10
+E_ocp_V_vs_AgAgCl: -0.1300
 
 Circuit Parameters (SI)
 ----------------------------------------
@@ -18,3 +19,4 @@ sigma: 7.700000e+01
 R_film: 9.000000e+02
 Q_film: 1.239000e-07
 n_film: 8.610000e-01
+E_ocp: -1.300000e-01

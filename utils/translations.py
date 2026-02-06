@@ -31,6 +31,7 @@ TRANSLATIONS = {
         # Labels EIS
         "eis_metrics_title": "Métriques EIS",
         "lbl_circuit": "Circuit",
+        "lbl_Eocp": "E_ocp (V vs Ag/AgCl)",
         "lbl_Rct": "Rct (Ω)",
         "lbl_Rs": "Rs (Ω)",
         "lbl_Rfilm": "R_film (Ω)",
@@ -81,6 +82,7 @@ TRANSLATIONS = {
         # Labels EIS
         "eis_metrics_title": "EIS Metrics",
         "lbl_circuit": "Circuit",
+        "lbl_Eocp": "E_ocp (V vs Ag/AgCl)",
         "lbl_Rct": "Rct (Ω)",
         "lbl_Rs": "Rs (Ω)",
         "lbl_Rfilm": "R_film (Ω)",

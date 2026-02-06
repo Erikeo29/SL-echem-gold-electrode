@@ -96,6 +96,7 @@ def render_eis_cascading_filters(df_origin: pd.DataFrame, key_prefix: str, sim_n
             "label": row.get("label", ""),
             "metrics": {
                 "circuit": row.get("circuit", ""),
+                "E_ocp_V": row.get("E_ocp_V", ""),
                 "Rs_measured": row.get("Rs_measured", ""),
                 "Rct_measured": row.get("Rct_measured", ""),
                 "R_film_measured": row.get("R_film_measured", ""),

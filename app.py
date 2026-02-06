@@ -289,7 +289,7 @@ elif selected_page == model_pages[1]:
                 with c_pop:
                     with st.popover(t("lbl_avail_sims"), use_container_width=True):
                         st.dataframe(
-                            df_eis[["run", "pct_Ni", "pct_Cu", "pH", "circuit",
+                            df_eis[["run", "pct_Ni", "pct_Cu", "pH", "E_ocp_V", "circuit",
                                     "Rct_measured", "R_film_measured", "Cdl_eff"]],
                             use_container_width=True, hide_index=True
                         )
@@ -343,12 +343,14 @@ elif selected_page == model_pages[1]:
                             st.markdown(f"**{sim_label}** — Run {f['run']}")
                             mc1, mc2, mc3 = st.columns(3)
                             mc1.metric(t("lbl_circuit"), m["circuit"])
-                            mc2.metric(t("lbl_Rs"), f"{m['Rs_measured']:.1f}" if isinstance(m['Rs_measured'], (int, float)) else str(m['Rs_measured']))
-                            mc3.metric(t("lbl_Rct"), f"{m['Rct_measured']:.1f}" if isinstance(m['Rct_measured'], (int, float)) else str(m['Rct_measured']))
+                            mc2.metric(t("lbl_Eocp"), f"{m['E_ocp_V']:+.3f} V" if isinstance(m['E_ocp_V'], (int, float)) else str(m['E_ocp_V']))
+                            mc3.metric(t("lbl_Rs"), f"{m['Rs_measured']:.1f}" if isinstance(m['Rs_measured'], (int, float)) else str(m['Rs_measured']))
                             mc4, mc5, mc6 = st.columns(3)
-                            mc4.metric(t("lbl_Rfilm"), f"{m['R_film_measured']:.1f}" if isinstance(m['R_film_measured'], (int, float)) else str(m['R_film_measured']))
-                            mc5.metric(t("lbl_Cdl"), f"{m['Cdl_eff']:.2e}" if isinstance(m['Cdl_eff'], (int, float)) else str(m['Cdl_eff']))
-                            mc6.metric(t("lbl_phase_max"), f"{m['phase_max_deg']:.1f}°" if isinstance(m['phase_max_deg'], (int, float)) else str(m['phase_max_deg']))
+                            mc4.metric(t("lbl_Rct"), f"{m['Rct_measured']:.1f}" if isinstance(m['Rct_measured'], (int, float)) else str(m['Rct_measured']))
+                            mc5.metric(t("lbl_Rfilm"), f"{m['R_film_measured']:.1f}" if isinstance(m['R_film_measured'], (int, float)) else str(m['R_film_measured']))
+                            mc6.metric(t("lbl_Cdl"), f"{m['Cdl_eff']:.2e}" if isinstance(m['Cdl_eff'], (int, float)) else str(m['Cdl_eff']))
+                            mc7, _, _ = st.columns(3)
+                            mc7.metric(t("lbl_phase_max"), f"{m['phase_max_deg']:.1f}°" if isinstance(m['phase_max_deg'], (int, float)) else str(m['phase_max_deg']))
         else:
             st.info(t("placeholder_coming_soon"))
 
@@ -358,6 +360,13 @@ elif selected_page == model_pages[1]:
         st.markdown("""
 L'étude paramétrique de 27 simulations EIS (Ni/Cu = 0, 10, 30 %, pH = 3, 7, 11) — alignée
 avec l'étude CV — met en évidence les tendances suivantes :
+
+**Potentiel de circuit ouvert (OCP)** :
+L'EIS est simulée à l'OCP, estimé par moyenne pondérée des E_ocp de chaque métal pur
+(approximation de potentiel mixte). Les valeurs Rct sont des données bibliographiques à l'OCP,
+non dérivées de Butler-Volmer.
+- Au pur : E_ocp = +0.50 V (pH 3), +0.15 V (pH 7), −0.10 V (pH 11) vs Ag/AgCl
+- Ni/Cu tirent l'OCP vers des valeurs plus négatives (Ni : −0.25 V, Cu : +0.02 V à pH 3)
 
 **Effet du pH sur Rct** :
 - pH 3 : Rct faible (~800–1280 Ω) — dissolution active, cinétique rapide
