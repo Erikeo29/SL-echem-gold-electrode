@@ -1,5 +1,5 @@
 **Sommaire :**
-1. Principe et différence avec l'étude 1
+1. Principe et différence avec la CV en solution
 2. Modèle physique
 3. Hypothèses et limites
 4. Dépendance au pH
@@ -8,9 +8,9 @@
 
 ---
 
-## 1. Principe et différence avec CV couple redox
+## 1. Principe et différence avec la CV en solution
 
-| Aspect | CV couple redox | CV oxydes métalliques |
+| Aspect | CV en solution | CV oxydes métalliques |
 |--------|:---------------------:|:----------------:|
 | Espèces redox | En solution | Adsorbées à la surface |
 | Transport | Diffusion (FEM 2D) | **Aucun** |

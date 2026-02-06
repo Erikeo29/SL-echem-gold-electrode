@@ -184,16 +184,16 @@ Pour les alliages Au+Ni+Cu, les paramètres effectifs sont calculés par :
 
 ---
 
-## 6. Complémentarité avec les études 1 et 3
+## 6. Complémentarité des études 1 et 2
 
-| | Étude 1 (CV couple redox) | Étude 3 (CV Au/Ni/Cu) | **Étude 4 (EIS Au/Ni/Cu)** |
-|---|---|---|---|
-| **Domaine** | Temps | Temps | **Fréquence** |
-| **Sortie** | I(E) voltammogramme | I(E), θ(t) | **Z(ω), φ(ω)** |
-| **Transport** | Diffusion 2D (FEM) | Aucun (surface) | **Diffusion 1D (analytique)** |
-| **Solver** | Firedrake | numpy ODE | **numpy (algébrique)** |
-| **Circuit** | — | — | **Randles / 2-TC adaptatif** |
-| **Diagnostic** | ΔEp, Ipa/Ipc | Couverture θ | **Rct, Cdl, R_film, σ** |
+| | Étude 1 (CV Au/Ni/Cu) | **Étude 2 (EIS Au/Ni/Cu)** |
+|---|---|---|
+| **Domaine** | Temps | **Fréquence** |
+| **Sortie** | I(E), θ(t) | **Z(ω), φ(ω)** |
+| **Transport** | Aucun (surface) | **Diffusion 1D (analytique)** |
+| **Solver** | numpy ODE | **numpy (algébrique)** |
+| **Circuit** | — | **Randles / 2-TC adaptatif** |
+| **Diagnostic** | Couverture θ, ΔEp, Ipa/Ipc | **Rct, Cdl, R_film, σ** |
 
 **L'EIS extrait des grandeurs inaccessibles en CV** :
 - **Rct** → vitesse de la réaction à l'équilibre

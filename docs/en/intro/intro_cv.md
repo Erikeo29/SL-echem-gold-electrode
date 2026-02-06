@@ -26,15 +26,13 @@ Electrochemical Impedance Spectroscopy (EIS) is complementary to CV: it operates
 
 Numerical simulation allows us to:
 1. Predict the shape of current peaks as a function of scan rate (CV)
-2. Extract kinetic constants ($k^0$) and diffusion coefficients ($D$)
-3. Understand depletion phenomena near the electrode
-4. Separate resistive and capacitive contributions of the interface (EIS)
-5. Diagnose the presence and properties of passive films
-6. Quantify the influence of redox couple properties on impedance response
+2. Diagnose the presence and properties of passive films
+3. Separate resistive and capacitive contributions of the interface (EIS)
+4. Quantify the influence of pH and composition on electrochemical behavior
 
-In this project, four complementary studies cover:
-- **Studies 1 and 2**: the **ferro/ferricyanide**-type redox couple ($Fe(CN)_6^{3-/4-}$) on a pure gold electrode, using CV (Study 1) and EIS (Study 2)
-- **Studies 3 and 4**: an **Au electrode with Ni and Cu impurities**, using CV with surface oxides (Study 3) and EIS with adaptive circuit (Study 4)
+In this project, two complementary studies cover:
+- **Study 1**: cyclic voltammetry on an **Au electrode with Ni and Cu impurities**, with surface oxides and Langmuir model
+- **Study 2**: impedance spectroscopy on the same electrode, with adaptive equivalent circuit
 
 ---
 

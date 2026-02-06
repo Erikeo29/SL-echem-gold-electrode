@@ -1,5 +1,5 @@
 **Contents:**
-1. Principle and difference with CV redox couple
+1. Principle and difference with solution-phase CV
 2. Physical model
 3. Hypotheses and limitations
 4. pH dependence
@@ -8,9 +8,9 @@
 
 ---
 
-## 1. Principle and difference with CV redox couple
+## 1. Principle and difference with solution-phase CV
 
-| Aspect | CV redox couple | CV metal oxides |
+| Aspect | Solution-phase CV | CV metal oxides |
 |--------|:---------------------:|:----------------:|
 | Redox species | In solution | Adsorbed on surface |
 | Transport | Diffusion (2D FEM) | **None** |

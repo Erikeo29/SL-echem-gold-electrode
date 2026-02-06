@@ -174,16 +174,16 @@ For Au+Ni+Cu alloys, effective parameters are computed by:
 
 ---
 
-## 6. Complementarity with Studies 1 and 3
+## 6. Complementarity of Studies 1 and 2
 
-| | Study 1 (CV redox couple) | Study 3 (CV Au/Ni/Cu) | **Study 4 (EIS Au/Ni/Cu)** |
-|---|---|---|---|
-| **Domain** | Time | Time | **Frequency** |
-| **Output** | I(E) voltammogram | I(E), θ(t) | **Z(ω), φ(ω)** |
-| **Transport** | 2D diffusion (FEM) | None (surface) | **1D diffusion (analytical)** |
-| **Solver** | Firedrake | numpy ODE | **numpy (algebraic)** |
-| **Circuit** | — | — | **Randles / 2-TC adaptive** |
-| **Diagnostics** | ΔEp, Ipa/Ipc | Coverage θ | **Rct, Cdl, R_film, σ** |
+| | Study 1 (CV Au/Ni/Cu) | **Study 2 (EIS Au/Ni/Cu)** |
+|---|---|---|
+| **Domain** | Time | **Frequency** |
+| **Output** | I(E), θ(t) | **Z(ω), φ(ω)** |
+| **Transport** | None (surface) | **1D diffusion (analytical)** |
+| **Solver** | numpy ODE | **numpy (algebraic)** |
+| **Circuit** | — | **Randles / 2-TC adaptive** |
+| **Diagnostics** | Coverage θ, ΔEp, Ipa/Ipc | **Rct, Cdl, R_film, σ** |
 
 **EIS extracts quantities inaccessible through CV**:
 - **Rct** → reaction rate at equilibrium

@@ -3,11 +3,10 @@
 **Sommaire :**
 1. Guides pédagogiques
 2. Théorie Butler-Volmer
-3. Système Ferro/ferricyanure
-4. Spectroscopie d'Impédance électrochimique (EIS)
-5. Simulation numérique
-6. Ressources web éducatives
-7. Ressources logicielles
+3. Spectroscopie d'impédance électrochimique (EIS)
+4. Simulation numérique
+5. Ressources web éducatives
+6. Ressources logicielles
 
 ---
 
@@ -29,7 +28,7 @@
 3. **Kuwana lab (aSDLib)**
    *"Cyclic Voltammetry - Experiment 1."*
    - [PDF Direct](https://www.asdlib.org/onlineArticles/elabware/kuwanaEC_lab/PDF-19-Experiment1.pdf)
-   - Manuel de laboratoire avec le couple ferricyanure.
+   - Manuel de laboratoire pour la voltamétrie cyclique.
 
 ---
 
@@ -49,74 +48,57 @@
 
 ---
 
-## 3. Système Ferro/ferricyanure
+## 3. Spectroscopie d'Impédance électrochimique (EIS)
 
-6. **Rafique, S. et al.**
-   *"Investigation of electrochemical behavior of potassium ferricyanide/ferrocyanide redox probes."*
-   Heliyon **2023**, 9(12), e23119.
-   - [Article Complet (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC10734727/)
-   - Étude CV et EIS sur électrode carbone.
-
-7. **Khan, M. A. et al.**
-   *"Electrochemical oxidation of ferricyanide."*
-   Scientific Reports **2021**, 11, 22538.
-   - [Article Complet (Nature)](https://www.nature.com/articles/s41598-021-02355-3)
-   - Découverte d'une réaction d'oxydation inédite.
-
----
-
-## 4. Spectroscopie d'Impédance électrochimique (EIS)
-
-8. **Lazanas, A. C.; prodromidis, M. I.**
+6. **Lazanas, A. C.; prodromidis, M. I.**
    *"Electrochemical Impedance Spectroscopy — A Tutorial."*
    ACS Measurement Science Au **2023**, 3(3), 162-193.
    - [Article (ACS)](https://pubs.acs.org/doi/10.1021/acsmeasuresciau.2c00070)
 
-9. **Burke, L. D.; nugent, P. F.**
+7. **Burke, L. D.; nugent, P. F.**
    *"The electrochemistry of gold: I the redox behaviour of the metal in aqueous media."*
    Gold Bulletin **1997**, 30, 43-53.
    - [Article (Springer)](https://link.springer.com/article/10.1007/BF03214756)
 
-10. **Gamry instruments**
+8. **Gamry instruments**
     *"Basics of Electrochemical Impedance Spectroscopy."*
     Application Note.
     - [PDF Direct (Gamry)](https://www.gamry.com/application-notes/EIS/basics-of-electrochemical-impedance-spectroscopy/)
 
-11. **Murbach, M. D. et al.**
+9. **Murbach, M. D. et al.**
     *"impedance.py: A Python package for electrochemical impedance analysis."*
     J. Open Source Softw. **2020**, 5(52), 2349.
     - [Article (JOSS)](https://joss.theoj.org/papers/10.21105/joss.02349)
 
 ---
 
-## 5. Simulation numérique
+## 4. Simulation numérique
 
-12. **Roy, T. et al.**
+10. **Roy, T. et al.**
     *"EchemFEM: A Firedrake-based Python package for electrochemical transport."*
     J. Open Source Softw. **2024**, 9(97), 6531.
     - [PDF Direct (OSTI)](https://www.osti.gov/servlets/purl/2370161)
-    - Package utilisé dans l'Étude 1.
+    - Package FEM pour l'électrochimie.
 
-13. **Kwon, O. et al.**
+11. **Kwon, O. et al.**
     *"Simulation of cyclic voltammetry of ferrocyanide/ferricyanide redox."*
     COMSOL Conference Paper.
     - [PDF Direct (COMSOL)](https://www.comsol.com/paper/download/83973/kwon_paper.pdf)
-    - Validation CV avec EQCM.
+    - Validation CV par simulation numérique.
 
 ---
 
-## 6. Ressources web éducatives
+## 5. Ressources web éducatives
 
 | Ressource | Description | Lien |
 |-----------|-------------|------|
 | **Chemistry LibreTexts** | Manuel de labo CV (UC Davis) | [Accéder](https://chem.libretexts.org/Courses/University_of_California_Davis/CHE_115:_Instrumental_Analysis_-_Lab_Manual/Lab_1:_Cyclic_Voltammetry) |
 | **Pine Research** | Équation de Randles-Ševčík | [Accéder](https://pineresearch.com/shop/kb/theory/fundamental-equations/randles-sevcik-equation/) |
 | **Ossila** | Tutoriel CV complet | [Accéder](https://www.ossila.com/pages/cyclic-voltammetry) |
-| **eDAQ Wiki** | Ferri/Ferrocyanure : faits et fiction | [Accéder](https://www.edaq.com/wiki/Cyclic_Voltammetry:_Ferro/Ferricyanide,_fact_and_fiction) |
 
 ---
 
-## 7. Ressources logicielles
+## 6. Ressources logicielles
 
 | Logiciel | Type | Site |
 |----------|------|------|

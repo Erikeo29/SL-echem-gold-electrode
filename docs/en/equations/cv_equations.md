@@ -123,7 +123,7 @@ where $\omega = 2\pi f$ is the angular frequency and $\varphi$ the phase shift b
 | CPE | $Z_{CPE} = \frac{1}{Q_0 (j\omega)^n}$ | $n=1$ → capacitance, $n<1$ → non-ideal |
 | Warburg | $Z_W = \frac{\sigma}{\sqrt{\omega}}(1-j)$ | 45° line on Nyquist |
 
-### 6.3 Randles circuit (EIS redox couple)
+### 6.3 Randles circuit (EIS)
 
 $$Z(\omega) = R_s + \frac{1}{\frac{1}{Z_{CPE}} + \frac{1}{R_{ct} + Z_W}}$$
 

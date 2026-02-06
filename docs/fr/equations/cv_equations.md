@@ -123,7 +123,7 @@ où $\omega = 2\pi f$ est la pulsation angulaire et $\varphi$ le déphasage entr
 | CPE | $Z_{CPE} = \frac{1}{Q_0 (j\omega)^n}$ | $n=1$ → capacité, $n<1$ → non idéal |
 | Warburg | $Z_W = \frac{\sigma}{\sqrt{\omega}}(1-j)$ | Droite à 45° sur Nyquist |
 
-### 6.3 Circuit de Randles (EIS couple redox)
+### 6.3 Circuit de Randles (EIS)
 
 $$Z(\omega) = R_s + \frac{1}{\frac{1}{Z_{CPE}} + \frac{1}{R_{ct} + Z_W}}$$
 

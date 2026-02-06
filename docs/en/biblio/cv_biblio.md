@@ -3,11 +3,10 @@
 **Contents:**
 1. Educational Guides
 2. Butler-Volmer Theory
-3. Ferro/Ferricyanide System
-4. Electrochemical Impedance Spectroscopy (EIS)
-5. Numerical Simulation
-6. Educational Web Resources
-7. Software Resources
+3. Electrochemical Impedance Spectroscopy (EIS)
+4. Numerical Simulation
+5. Educational Web Resources
+6. Software Resources
 
 ---
 
@@ -29,7 +28,7 @@
 3. **Kuwana Lab (ASDLib)**
    *"Cyclic Voltammetry - Experiment 1."*
    - [Direct PDF](https://www.asdlib.org/onlineArticles/elabware/kuwanaEC_lab/PDF-19-Experiment1.pdf)
-   - Laboratory manual with ferricyanide couple.
+   - Laboratory manual for cyclic voltammetry.
 
 ---
 
@@ -49,74 +48,57 @@
 
 ---
 
-## 3. Ferro/Ferricyanide System
+## 3. Electrochemical Impedance Spectroscopy (EIS)
 
-6. **Rafique, S. et al.**
-   *"Investigation of electrochemical behavior of potassium ferricyanide/ferrocyanide redox probes."*
-   Heliyon **2023**, 9(12), e23119.
-   - [Full Article (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC10734727/)
-   - CV and EIS study on carbon electrode.
-
-7. **Khan, M. A. et al.**
-   *"Electrochemical oxidation of ferricyanide."*
-   Scientific Reports **2021**, 11, 22538.
-   - [Full Article (Nature)](https://www.nature.com/articles/s41598-021-02355-3)
-   - Discovery of novel oxidation reaction.
-
----
-
-## 4. Electrochemical Impedance Spectroscopy (EIS)
-
-8. **Lazanas, A. C.; Prodromidis, M. I.**
+6. **Lazanas, A. C.; Prodromidis, M. I.**
    *"Electrochemical Impedance Spectroscopy — A Tutorial."*
    ACS Measurement Science Au **2023**, 3(3), 162-193.
    - [Article (ACS)](https://pubs.acs.org/doi/10.1021/acsmeasuresciau.2c00070)
 
-9. **Burke, L. D.; Nugent, P. F.**
+7. **Burke, L. D.; Nugent, P. F.**
    *"The electrochemistry of gold: I the redox behaviour of the metal in aqueous media."*
    Gold Bulletin **1997**, 30, 43-53.
    - [Article (Springer)](https://link.springer.com/article/10.1007/BF03214756)
 
-10. **Gamry Instruments**
+8. **Gamry Instruments**
     *"Basics of Electrochemical Impedance Spectroscopy."*
     Application Note.
     - [PDF Direct (Gamry)](https://www.gamry.com/application-notes/EIS/basics-of-electrochemical-impedance-spectroscopy/)
 
-11. **Murbach, M. D. et al.**
+9. **Murbach, M. D. et al.**
     *"impedance.py: A Python package for electrochemical impedance analysis."*
     J. Open Source Softw. **2020**, 5(52), 2349.
     - [Article (JOSS)](https://joss.theoj.org/papers/10.21105/joss.02349)
 
 ---
 
-## 5. Numerical Simulation
+## 4. Numerical Simulation
 
-12. **Roy, T. et al.**
+10. **Roy, T. et al.**
     *"EchemFEM: A Firedrake-based Python package for electrochemical transport."*
     J. Open Source Softw. **2024**, 9(97), 6531.
     - [Direct PDF (OSTI)](https://www.osti.gov/servlets/purl/2370161)
-    - Package used in Study 1.
+    - FEM package for electrochemistry.
 
-13. **Kwon, O. et al.**
+11. **Kwon, O. et al.**
     *"Simulation of cyclic voltammetry of ferrocyanide/ferricyanide redox."*
     COMSOL Conference Paper.
     - [Direct PDF (COMSOL)](https://www.comsol.com/paper/download/83973/kwon_paper.pdf)
-    - CV validation with EQCM.
+    - CV validation through numerical simulation.
 
 ---
 
-## 6. Educational Web Resources
+## 5. Educational Web Resources
 
 | Resource | Description | Link |
 |----------|-------------|------|
 | **Chemistry LibreTexts** | CV Lab Manual (UC Davis) | [Access](https://chem.libretexts.org/Courses/University_of_California_Davis/CHE_115:_Instrumental_Analysis_-_Lab_Manual/Lab_1:_Cyclic_Voltammetry) |
 | **Pine Research** | Randles-Ševčík Equation | [Access](https://pineresearch.com/shop/kb/theory/fundamental-equations/randles-sevcik-equation/) |
 | **Ossila** | Complete CV Tutorial | [Access](https://www.ossila.com/pages/cyclic-voltammetry) |
-| **eDAQ Wiki** | Ferri/Ferrocyanide: Fact and Fiction | [Access](https://www.edaq.com/wiki/Cyclic_Voltammetry:_Ferro/Ferricyanide,_fact_and_fiction) |
 
 ---
 
-## 7. Software Resources
+## 6. Software Resources
 
 | Software | Type | Website |
 |----------|------|---------|

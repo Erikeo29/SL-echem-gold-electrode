@@ -13,12 +13,12 @@ TRANSLATIONS = {
         "annex_pages": ["Conclusion et perspectives", "Lexique", "Équations clés", "Un peu d'histoire", "Références bibliographiques"],
         "tabs_cv_oxide": ["Physique", "Code", "Résultats"],
         "tabs_eis": ["Physique", "Code", "Résultats", "Analyse"],
-        "version_info": """**Version 3.0.0** — Feb 2026 - *EQU*
+        "version_info": """**Version 2.1.2** — Dec 2025 - *EQU*
 
 **Nouveautés :**
-- App dédiée électrode Au/Ni/Cu
-- Filtres en cascade
-- Assistant IA Llama 3""",
+- Étude paramétrique EIS
+- Assistant IA Llama 3
+- Filtres en cascade""",
         # Labels CV oxide
         "title_study_1": "Étude 1 : CV d'une électrode Au avec impuretés Ni et Cu",
         "title_study_2": "Étude 2 : EIS d'une électrode Au avec impuretés Ni et Cu",
@@ -63,12 +63,12 @@ TRANSLATIONS = {
         "annex_pages": ["Conclusion and Perspectives", "Glossary", "Key Equations", "A Bit of History", "Bibliographical References"],
         "tabs_cv_oxide": ["Physics", "Code", "Results"],
         "tabs_eis": ["Physics", "Code", "Results", "Analysis"],
-        "version_info": """**Version 3.0.0** — Feb 2026 - *EQU*
+        "version_info": """**Version 2.1.2** — Dec 2025 - *EQU*
 
 **New Features:**
-- Dedicated Au/Ni/Cu electrode app
-- Cascade filters
-- AI Assistant Llama 3""",
+- EIS parametric study
+- AI Assistant Llama 3
+- Cascade filters""",
         # Labels CV oxide
         "title_study_1": "Study 1: CV of an Au electrode with Ni and Cu impurities",
         "title_study_2": "Study 2: EIS of an Au electrode with Ni and Cu impurities",

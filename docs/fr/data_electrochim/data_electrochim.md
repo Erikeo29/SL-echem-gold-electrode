@@ -2,10 +2,9 @@
 
 **Sommaire :**
 1. Constantes fondamentales
-2. Couple ferro/ferricyanide (études 1 & 2)
-3. Oxydes métalliques (études 3 & 4)
-4. Murs électrochimiques (HER/OER)
-5. Hypothèses et limites des modèles
+2. Oxydes métalliques (études 1 & 2)
+3. Murs électrochimiques (HER/OER)
+4. Hypothèses et limites des modèles
 
 ---
 
@@ -20,31 +19,7 @@
 
 ---
 
-## 2. Couple ferro/ferricyanide (études 1 & 2)
-
-### Réaction électrochimique
-
-$$\text{Fe(CN)}_6^{3-} + e^- \rightleftharpoons \text{Fe(CN)}_6^{4-}$$
-
-### Paramètres cinétiques
-
-| Paramètre | Symbole | Valeur | Unité | Remarque |
-|-----------|---------|--------|-------|----------|
-| Potentiel standard | $E^0$ | **+0.36** | V vs Ag/AgCl | Réversible |
-| Constante de vitesse | $k^0$ | 1×10⁻⁵ | m/s | Quasi-réversible |
-| Coefficient de transfert | $\alpha$ | 0.5 | — | Symétrique |
-| Nombre d'électrons | $n$ | 1 | — | — |
-| Coefficient de diffusion | $D$ | 7.6×10⁻¹⁰ | m²/s | Identique ox/red |
-
-### Équation de Butler-Volmer
-
-$$i = i_0 \left[ \exp\left(\alpha f \eta\right) - \exp\left(-(1-\alpha) f \eta\right) \right]$$
-
-où $\eta = E - E^0$ est la surtension et $i_0 = nFAk^0 c$ le courant d'échange.
-
----
-
-## 3. Oxydes métalliques (études 3 & 4)
+## 2. Oxydes métalliques (études 1 & 2)
 
 ### Équations redox de formation des oxydes
 
@@ -126,7 +101,7 @@ où $M$ = Au, Ni, ou Cu.
 
 ---
 
-## 4. Murs électrochimiques (HER/OER)
+## 3. Murs électrochimiques (HER/OER)
 
 ### Réactions
 
@@ -150,17 +125,9 @@ $$E_{OER}(pH) = +1.50 - 0.059 \times pH \text{ V}$$
 
 ---
 
-## 5. Hypothèses et limites des modèles
+## 4. Hypothèses et limites des modèles
 
-### Étude 1 & 2 — Couple redox en solution
-
-| Hypothèse | Justification | Limitation |
-|-----------|---------------|------------|
-| Diffusion 1D semi-infinie | Électrode plane, solution calme | Ignore convection naturelle |
-| Espèces en excès | Électrolyte support >> espèces actives | Pas de migration |
-| $D_{ox} = D_{red}$ | Simplification | Peut affecter $\Delta E_p$ |
-
-### Étude 3 & 4 — Oxydes de surface
+### Études 1 & 2 — Oxydes de surface
 
 | Hypothèse | Justification | Limitation |
 |-----------|---------------|------------|
