@@ -1,0 +1,13 @@
+EIS Extracted Metrics
+========================================
+
+Rs_measured: 1.563021e+02
+phase_max_deg: 4.938434e+01
+sigma_input: 5.175000e+01
+circuit: 2.000000e+00
+R_film_measured: 1.301266e+02
+omega_film: 3.117684e+05
+Rct_measured: 4.081248e+03
+omega_max: 9.069851e+02
+f_max_Hz: 1.443512e+02
+Cdl_eff: 2.701511e-07

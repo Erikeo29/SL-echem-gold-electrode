@@ -1,0 +1,20 @@
+EIS Simulation Parameters
+========================================
+
+metals: Au,Ni,Cu
+fractions: 0.9000,0.0500,0.0500
+pH: 7.0
+f_min_Hz: 0.01
+f_max_Hz: 100000.0
+n_points_per_decade: 10
+
+Circuit Parameters (SI)
+----------------------------------------
+Rs: 6.000000e+01
+Rct: 4.740500e+03
+Q0: 5.531250e-07
+n: 9.095000e-01
+sigma: 4.725000e+01
+R_film: 6.000000e+01
+Q_film: 1.327500e-08
+n_film: 8.955000e-01
