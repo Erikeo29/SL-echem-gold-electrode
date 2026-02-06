@@ -14,8 +14,8 @@ from pathlib import Path
 # Output paths
 # ---------------------------------------------------------------------------
 BASE = Path(
-    "/home/erikeo29/20_RD_Divers/04_Streamlit electrochemisty_v1"
-    "/electrochemistry-v2/assets/eis/png"
+    "/home/erikeo29/20_RD_Divers/04b_SL_echem_gold_electrode"
+    "/echem_gold_electrode/assets/eis/png"
 )
 BASE.mkdir(parents=True, exist_ok=True)
 
