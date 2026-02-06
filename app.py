@@ -356,18 +356,22 @@ elif selected_page == model_pages[1]:
         st.markdown("### Analyse de l'étude 2 — EIS électrode Au/Ni/Cu")
 
         st.markdown("""
-L'étude paramétrique de 54 simulations EIS met en évidence les tendances suivantes :
+L'étude paramétrique de 27 simulations EIS (Ni/Cu = 0, 10, 30 %, pH = 3, 7, 11) — alignée
+avec l'étude CV — met en évidence les tendances suivantes :
 
 **Effet du pH sur Rct** :
-- pH 3 : Rct faible (~500–1300 Ω) — dissolution active, cinétique rapide
-- pH 7 : Rct maximal (~4000–4700 Ω) — passivation partielle, cinétique lente
-- pH 11 : Rct intermédiaire (~2300–4900 Ω) — OH⁻ facilite le transfert de charge
+- pH 3 : Rct faible (~800–1280 Ω) — dissolution active, cinétique rapide
+- pH 7 : Rct maximal (~3100–4700 Ω) — passivation partielle, cinétique lente
+- pH 11 : Rct élevé (~2270–6000 Ω) — films passifs sur tous les métaux
 
-**Effet du Ni** : abaisse Rct de façon significative (sites catalytiques), minimum autour de 10–15%.
+**Effet du Ni** : augmente Rct à pH 11 de façon marquée (Ni(OH)₂/NiOOH très protecteur,
+R_film intrinsèque = 2000 Ω). Au70%Ni30% atteint Rct ≈ 5170 Ω à pH 11.
 
-**Effet du Cu** : réduit systématiquement Rct (Rct intrinsèque Cu = 500 Ω < Ni = 700 Ω).
+**Effet du Cu** : réduit Rct à pH 3 (dissolution rapide, Rct intrinsèque Cu = 500 Ω)
+mais augmente la résistance de film à pH 11 (Cu₂O/CuO, R_film = 800 Ω).
 
-**Films passifs** : R_film apparaît à pH ≥ 7 pour Ni/Cu, et à pH 11 même pour Au (Au₂O₃).
+**Composition extrême** : Au40%Ni30%Cu30% à pH 11 présente le Rct le plus élevé (~6000 Ω)
+avec un film passif mixte (R_film = 900 Ω), cohérent avec les diagrammes de Pourbaix.
 """)
 
 

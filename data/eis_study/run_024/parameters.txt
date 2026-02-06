@@ -2,7 +2,7 @@ EIS Simulation Parameters
 ========================================
 
 metals: Au,Ni,Cu
-fractions: 0.8500,0.1000,0.0500
+fractions: 0.6000,0.3000,0.1000
 pH: 11.0
 f_min_Hz: 0.01
 f_max_Hz: 100000.0
@@ -11,10 +11,10 @@ n_points_per_decade: 10
 Circuit Parameters (SI)
 ----------------------------------------
 Rs: 1.000000e+01
-Rct: 2.689200e+03
-Q0: 8.363250e-07
-n: 8.775000e-01
-sigma: 5.700000e+01
-R_film: 3.675000e+02
-Q_film: 1.619550e-07
-n_film: 8.910000e-01
+Rct: 3.952000e+03
+Q0: 1.177050e-06
+n: 8.110000e-01
+sigma: 6.900000e+01
+R_film: 7.700000e+02
+Q_film: 1.345200e-07
+n_film: 8.770000e-01
