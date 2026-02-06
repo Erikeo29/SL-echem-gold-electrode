@@ -13,7 +13,7 @@
 
 ### 1.1 Perturbation et réponse
 
-Contrairement aux Études 1 et 2 qui opèrent dans le **domaine temporel** (balayage en potentiel → courant I(E)), l'EIS travaille dans le **domaine fréquentiel**. Une petite perturbation sinusoïdale de potentiel est superposée au potentiel DC :
+Contrairement à l'étude 1 (CV oxydes de surface) qui opère dans le **domaine temporel** (balayage en potentiel → courant I(E)), l'EIS (étude 2) travaille dans le **domaine fréquentiel**. Une petite perturbation sinusoïdale de potentiel est superposée au potentiel DC :
 
 $$E(t) = E_{ocp} + \Delta E \cdot \sin(\omega t)$$
 
@@ -66,44 +66,14 @@ Le modèle sélectionne automatiquement le circuit selon le pH et la composition
 
 La nature du film passif dépend du métal et du pH. Les équations redox détaillées (Au₂O₃, Ni(OH)₂/NiOOH, Cu₂O/CuO) et les potentiels associés sont présentés dans la page **Données électrochimiques**.
 
-### 2.3 pH 3 (acide) — Randles simple
+### 2.3 Circuits par pH
 
-> **Circuit** :  `Rs` → `[ CPE_dl ‖ ( Rct + Z_W ) ]`
-
-**Justification** :
-- Au reste nu (pas d'oxyde en dessous de ~1.2 V vs. RHE)
-- Ni et Cu se dissolvent activement (pas de passivation stable sous pH 5)
-- **1 seule constante de temps** : la double couche électrique
-
-**Signature Nyquist** : 1 semicercle + droite de Warburg à 45°.
-
-### 2.4 pH 7 (neutre) — circuit variable selon le métal
-
-Le comportement à pH 7 dépend du métal :
-
-**Au et Ni → Randles simple** (pas de film) :
-> `Rs` → `[ CPE_dl ‖ ( Rct + Z_W ) ]`
-
-**Cu → 2 constantes de temps** (film Cu₂O) :
-> `Rs` → `[ CPE_film ‖ R_film ]` → `[ CPE_dl ‖ ( Rct + Z_W ) ]`
-
-**Justification** :
-- Au reste nu à pH 7 (circuit Randles simple)
-- ⚠️ **Ni instable à pH 7** : le film NiOOH se dissout lentement (ACS Omega 2016). Traité comme dissolution lente, pas de R_film.
-- Cu forme Cu₂O semi-protecteur → R_film = 400 Ω
-
-**Signature Nyquist** : 1 arc (Au, Ni) ou 2 arcs possiblement superposés (Cu) + Warburg.
-
-### 2.5 pH 11 (alcalin) — 2 constantes de temps pour TOUS les métaux
-
-> **Circuit** :  `Rs` → `[ CPE_oxide ‖ R_oxide ]` → `[ CPE_dl ‖ ( Rct + Z_W ) ]`
-
-**Justification** :
-- **Même Au** forme un oxyde/hydroxyde de surface (Au₂O₃) en milieu alcalin (Burke & Nugent, 1997)
-- Ni : passivation profonde, film NiO/Ni(OH)₂ épais, R_film très élevé (2 000 Ω)
-- Cu : film duplex Cu₂O/CuO/Cu(OH)₂
-
-**Signature Nyquist** : 2 arcs nets pour toutes les compositions + Warburg.
+| | **pH 3** (acide) | **pH 7** (neutre) | **pH 11** (alcalin) |
+|---|---|---|---|
+| **Nom** | Randles simple | Circuit variable | 2-TC (tous métaux) |
+| **Circuit** | `Rs → [CPE_dl ‖ (Rct + Z_W)]` | Au, Ni : Randles ; Cu : `Rs → [CPE_film ‖ R_film] → [CPE_dl ‖ (Rct + Z_W)]` | `Rs → [CPE_oxide ‖ R_oxide] → [CPE_dl ‖ (Rct + Z_W)]` |
+| **Justification** | Au nu ; Ni/Cu dissolution active (pas de passivation < pH 5) | Au nu ; ⚠️ Ni instable — NiOOH se dissout (ACS Omega 2016) ; Cu : Cu₂O semi-protecteur (R_film = 400 Ω) | Tous passivés : Au(OH)₃ (Burke 1997), Ni(OH)₂/NiOOH (R_film = 2 000 Ω), Cu₂O/CuO |
+| **Signature Nyquist** | 1 semicercle + Warburg 45° | 1 arc (Au, Ni) ou 2 arcs superposés (Cu) + Warburg | 2 arcs nets + Warburg |
 
 ---
 
