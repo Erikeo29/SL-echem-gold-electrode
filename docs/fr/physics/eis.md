@@ -70,7 +70,7 @@ La nature du film passif dépend du métal et du pH. Les équations redox détai
 
 | | **pH 3** (acide) | **pH 7** (neutre) | **pH 11** (alcalin) |
 |---|---|---|---|
-| **Nom** | Randles simple | Circuit variable | 2-TC (tous métaux) |
+| **Nom** | Randles simple | Circuit variable | 2 constantes de temps (tous métaux) |
 | **Circuit** | `Rs → [CPE_dl ‖ (Rct + Z_W)]` | Au, Ni : Randles ; Cu : `Rs → [CPE_film ‖ R_film] → [CPE_dl ‖ (Rct + Z_W)]` | `Rs → [CPE_oxide ‖ R_oxide] → [CPE_dl ‖ (Rct + Z_W)]` |
 | **Justification** | Au nu ; Ni/Cu dissolution active (pas de passivation < pH 5) | Au nu ; ⚠️ Ni instable — NiOOH se dissout (ACS Omega 2016) ; Cu : Cu₂O semi-protecteur (R_film = 400 Ω) | Tous passivés : Au(OH)₃ (Burke 1997), Ni(OH)₂/NiOOH (R_film = 2 000 Ω), Cu₂O/CuO |
 | **Signature Nyquist** | 1 semicercle + Warburg 45° | 1 arc (Au, Ni) ou 2 arcs superposés (Cu) + Warburg | 2 arcs nets + Warburg |
@@ -184,7 +184,7 @@ Pour les alliages Au+Ni+Cu, les paramètres effectifs sont calculés par :
 | **Potentiel** | Balayage ($E_{min}$ → $E_{max}$) | **Fixe ($E_{ocp}$)** |
 | **Transport** | Aucun (surface) | **Diffusion 1D (analytique)** |
 | **Solver** | numpy ODE | **numpy (algébrique)** |
-| **Circuit** | — | **Randles / 2-TC adaptatif** |
+| **Circuit** | — | **Randles / 2 constantes de temps adaptatif** |
 | **Diagnostic** | Couverture θ, ΔEp, Ipa/Ipc | **Rct, Cdl, R_film, σ** |
 
 **L'EIS extrait des grandeurs inaccessibles en CV** :
