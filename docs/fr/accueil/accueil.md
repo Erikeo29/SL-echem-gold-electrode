@@ -28,7 +28,7 @@ Simulation des réactions de surface (oxydes métalliques) sur une électrode d'
 
 ### Étude 2 : EIS d'une électrode Au avec impuretés Ni et Cu
 
-Spectroscopie d'impédance électrochimique sur la même électrode Au/Ni/Cu. Le modèle utilise un circuit équivalent adaptatif : Randles simple à pH acide, 2 constantes de temps à pH neutre/alcalin (film passif). L'étude paramétrique porte sur le pH, %Ni et %Cu (54 simulations). Les diagnostics extraits ($R_{ct}$, $C_{dl}$, $R_{film}$) sont complémentaires des métriques CV de l'étude 1.
+Spectroscopie d'impédance électrochimique sur la même électrode Au/Ni/Cu. Le modèle utilise un circuit équivalent adaptatif : Randles simple à pH acide, 2 constantes de temps à pH neutre/alcalin (film passif). L'étude paramétrique porte sur le pH, %Ni et %Cu (27 simulations, aligné avec l'étude CV). Les diagnostics extraits ($R_{ct}$, $C_{dl}$, $R_{film}$) sont complémentaires des métriques CV de l'étude 1.
 
 ---
 

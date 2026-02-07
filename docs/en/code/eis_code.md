@@ -18,7 +18,7 @@ The EIS simulation is structured into 3 Python modules:
 ├── parameters_eis.py       # Physical parameters per metal and pH
 ├── circuit_elements.py     # Impedance elements (R, CPE, Warburg)
 ├── eis_simulation.py       # Main simulation + metric extraction
-└── parametric_study_eis.py # Parametric study (54 runs)
+└── parametric_study_eis.py # Parametric study (27 runs)
 ```
 
 ---
@@ -129,12 +129,12 @@ def extract_metrics(omega, Z, params):
 
 ## 4. Parametric Study
 
-**54 simulations**: 6 %Ni × 3 %Cu × 3 pH
+**27 simulations** (aligned with CV study): 3 %Ni × 3 %Cu × 3 pH
 
 ```python
-NI_RANGE = [0, 5, 10, 15, 20, 25]
-CU_RANGE = [0, 5, 10]
-PH_RANGE = [3.0, 7.0, 11.0]
+PCT_NI_DEFAULT = [0, 10, 30]
+PCT_CU_DEFAULT = [0, 10, 30]
+PH_DEFAULT = [3.0, 7.0, 11.0]
 ```
 
 Each run produces: `eis_data.csv`, `parameters.txt`, `metrics.txt`, `*_Nyquist.png`, `*_Bode.png`.

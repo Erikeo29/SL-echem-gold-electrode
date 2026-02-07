@@ -28,7 +28,7 @@ Simulation of surface reactions (metal oxides) on a gold electrode with nickel a
 
 ### Study 2: EIS of an Au electrode with Ni and Cu impurities
 
-Electrochemical impedance spectroscopy on the same Au/Ni/Cu electrode. The model uses an adaptive equivalent circuit: simple Randles at acidic pH, 2 time constants at neutral/alkaline pH (passive film). The parametric study covers pH, %Ni and %Cu (54 simulations). The extracted diagnostics ($R_{ct}$, $C_{dl}$, $R_{film}$) are complementary to the CV metrics from Study 1.
+Electrochemical impedance spectroscopy on the same Au/Ni/Cu electrode. The model uses an adaptive equivalent circuit: simple Randles at acidic pH, 2 time constants at neutral/alkaline pH (passive film). The parametric study covers pH, %Ni and %Cu (27 simulations, aligned with CV study). The extracted diagnostics ($R_{ct}$, $C_{dl}$, $R_{film}$) are complementary to the CV metrics from Study 1.
 
 ---
 
