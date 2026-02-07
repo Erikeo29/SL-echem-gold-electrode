@@ -1,4 +1,5 @@
 """Fonctions de chargement des données — Électrode Au/Ni/Cu."""
+import json
 import os
 import pandas as pd
 import streamlit as st
@@ -38,3 +39,28 @@ def load_file_content(relative_path: str) -> str:
             return f.read()
     except Exception:
         return f"Document not found: {relative_path}"
+
+
+def render_notebook(relative_path: str):
+    """Affiche un notebook Jupyter (.ipynb) dans Streamlit.
+
+    Chaque cellule markdown est rendue avec st.markdown(),
+    chaque cellule code avec st.code().
+    """
+    lang = get_language()
+    full_path = os.path.join(DOC_PATH, lang, relative_path)
+    try:
+        with open(full_path, 'r', encoding='utf-8') as f:
+            nb = json.load(f)
+    except Exception:
+        st.error(f"Notebook not found: {relative_path}")
+        return
+
+    for cell in nb.get("cells", []):
+        source = "".join(cell.get("source", []))
+        if not source.strip():
+            continue
+        if cell.get("cell_type") == "markdown":
+            st.markdown(source)
+        elif cell.get("cell_type") == "code":
+            st.code(source, language="python")

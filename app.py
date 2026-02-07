@@ -12,6 +12,7 @@ from utils.data_loaders import (
     load_oxide_mapping,
     load_eis_mapping,
     load_file_content,
+    render_notebook,
 )
 from utils.media import load_media_as_base64, display_smart_markdown
 from components.filters import (
@@ -224,7 +225,7 @@ elif selected_page == model_pages[0]:
         st.markdown(load_file_content("physics/cv_oxide.md"))
 
     with tabs_oxide[1]:
-        st.markdown(load_file_content("code/cv_oxide_code.md"))
+        render_notebook("code/cv_oxide_notebook.ipynb")
 
     with tabs_oxide[2]:
         df_oxide = load_oxide_mapping()
