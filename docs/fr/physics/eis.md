@@ -3,9 +3,7 @@
 2. Circuits équivalents
 3. Éléments d'impédance
 4. Paramètres physiques
-5. Lois de mélange
-6. Complémentarité avec les études 1 et 2
-7. Références bibliographiques
+5. Références bibliographiques
 
 ---
 
@@ -159,43 +157,7 @@ Tous les métaux forment un film passif : Au(OH)₃ (léger), Ni(OH)₂/NiOOH (�
 
 ---
 
-## 5. Lois de mélange
-
-Pour les alliages Au+Ni+Cu, les paramètres effectifs sont calculés par :
-
-| Paramètre | Loi de mélange |
-|-----------|---------------|
-| Rct | Moyenne pondérée × (1 − 0.04·%Ni/100) |
-| Q₀_dl | Q₀_Au × (1 + 0.02·%Ni + 0.03·%Cu) |
-| n | n_pondéré − 0.002·%Ni − 0.003·%Cu |
-| σ | Moyenne pondérée |
-| R_film | Moyenne pondérée |
-| E_ocp | Moyenne pondérée (approx. potentiel mixte) |
-| Rs | Identique pour tous (propriété de l'électrolyte) |
-
----
-
-## 6. Complémentarité des études 1 et 2
-
-| | Étude 1 (CV Au/Ni/Cu) | **Étude 2 (EIS Au/Ni/Cu)** |
-|---|---|---|
-| **Domaine** | Temps | **Fréquence** |
-| **Sortie** | I(E), θ(t) | **Z(ω), φ(ω)** |
-| **Potentiel** | Balayage ($E_{min}$ → $E_{max}$) | **Fixe ($E_{ocp}$)** |
-| **Transport** | Aucun (surface) | **Diffusion 1D (analytique)** |
-| **Solver** | numpy ODE | **numpy (algébrique)** |
-| **Circuit** | — | **Randles / 2 constantes de temps adaptatif** |
-| **Diagnostic** | Couverture θ, ΔEp, Ipa/Ipc | **Rct, Cdl, R_film, σ** |
-
-**L'EIS extrait des grandeurs inaccessibles en CV** :
-- **Rct** → vitesse de la réaction à l'équilibre
-- **Cdl** → structure de l'interface
-- **R_film** → épaisseur et compacité du film passif
-- **σ** (Warburg) → coefficient de diffusion effectif
-
----
-
-## 7. Références bibliographiques
+## 5. Références bibliographiques
 
 | # | Référence | Usage |
 |---|-----------|-------|

@@ -3,9 +3,7 @@
 2. Equivalent Circuits
 3. Impedance Elements
 4. Physical Parameters
-5. Mixing Laws
-6. Complementarity with Studies 1 and 2
-7. Bibliographical References
+5. Bibliographical References
 
 ---
 
@@ -159,43 +157,7 @@ All metals form a passive film: Au(OH)₃ (thin), Ni(OH)₂/NiOOH (thick, protec
 
 ---
 
-## 5. Mixing Laws
-
-For Au+Ni+Cu alloys, effective parameters are computed by:
-
-| Parameter | Mixing law |
-|-----------|-----------|
-| Rct | Weighted average × (1 − 0.04·%Ni/100) |
-| Q₀_dl | Q₀_Au × (1 + 0.02·%Ni + 0.03·%Cu) |
-| n | n_weighted − 0.002·%Ni − 0.003·%Cu |
-| σ | Weighted average |
-| R_film | Weighted average |
-| E_ocp | Weighted average (mixed-potential approx.) |
-| Rs | Same for all (electrolyte property) |
-
----
-
-## 6. Complementarity of Studies 1 and 2
-
-| | Study 1 (CV Au/Ni/Cu) | **Study 2 (EIS Au/Ni/Cu)** |
-|---|---|---|
-| **Domain** | Time | **Frequency** |
-| **Output** | I(E), θ(t) | **Z(ω), φ(ω)** |
-| **Potential** | Sweep ($E_{min}$ → $E_{max}$) | **Fixed ($E_{ocp}$)** |
-| **Transport** | None (surface) | **1D diffusion (analytical)** |
-| **Solver** | numpy ODE | **numpy (algebraic)** |
-| **Circuit** | — | **Randles / 2 time constants adaptive** |
-| **Diagnostics** | Coverage θ, ΔEp, Ipa/Ipc | **Rct, Cdl, R_film, σ** |
-
-**EIS extracts quantities inaccessible through CV**:
-- **Rct** → reaction rate at equilibrium
-- **Cdl** → interface structure
-- **R_film** → passive film thickness and compactness
-- **σ** (Warburg) → effective diffusion coefficient
-
----
-
-## 7. Bibliographical References
+## 5. Bibliographical References
 
 | # | Reference | Usage |
 |---|-----------|-------|
