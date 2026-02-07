@@ -2,8 +2,7 @@
 1. EIS Principle
 2. Equivalent Circuits
 3. Impedance Elements
-4. Physical Parameters
-5. Bibliographical References
+4. Bibliographical References
 
 ---
 
@@ -103,61 +102,7 @@ with $Z_{film\parallel} = \frac{R_{film} \cdot Z_{CPE,film}}{R_{film} + Z_{CPE,f
 
 ---
 
-## 4. Physical Parameters
-
-### 4.1 Constants
-
-| Parameter | Value | Unit |
-|-----------|-------|------|
-| F (Faraday) | 96485 | C/mol |
-| R (gas) | 8.314 | J/mol/K |
-| T | 298.15 | K |
-| n (electrons) | 1 | — |
-| A (area) | 1.77×10⁻⁶ | m² |
-
-### 4.2 Parameters by metal and pH
-
-The values below are **typical bibliographic parameters at OCP** (not derived from Butler-Volmer). Detailed sources are in the **Electrochemical Data** page, section 3.
-
-#### pH 3 (acidic, active dissolution, no film)
-
-All metals are in active dissolution: low Rct for Ni and Cu, no passive film.
-
-| Metal | Rs (Ω) | Rct (Ω) | Q₀ (µF·s^(n-1)/cm²) | n | σ (Ω·s^(-1/2)) |
-|-------|---------|---------|---------------------|---|----------------|
-| Au | 40 | 1200 | 30 | 0.94 | 60 |
-| Ni | 40 | 700 | 40 | 0.91 | 75 |
-| Cu | 40 | 500 | 50 | 0.89 | 90 |
-
-*Sources: Hamelin 1994 (Au Rct), Beverskog 1997 (Ni/Cu Pourbaix).*
-
-#### pH 7 (neutral, Cu₂O film only)
-
-Au remains bare, Ni is unstable (no stable film — ACS Omega 2016), only Cu forms a semi-protective Cu₂O film.
-
-| Metal | Rs (Ω) | Rct (Ω) | Q₀ | n | σ | R_film (Ω) | Q_film | n_film |
-|-------|---------|---------|-----|---|---|-----------|--------|--------|
-| Au | 60 | 5000 | 25 | 0.94 | 45 | 0 | — | — |
-| Ni | 60 | 1500 | 35 | 0.90 | 70 | 0 | — | — |
-| Cu | 60 | 2000 | 35 | 0.87 | 75 | 400 | 10 | 0.84 |
-
-*Sources: Song 2025 (Au Cdl), JACS 2024 (Cu₂O), ACS Omega 2016 (Ni instability).*
-
-#### pH 11 (alkaline, films on all metals)
-
-All metals form a passive film: Au(OH)₃ (thin), Ni(OH)₂/NiOOH (thick, protective), Cu₂O/CuO.
-
-| Metal | Rs (Ω) | Rct (Ω) | Q₀ | n | σ | R_film (Ω) | Q_film | n_film |
-|-------|---------|---------|-----|---|---|-----------|--------|--------|
-| Au | 10 | 2000 | 35 | 0.92 | 50 | 150 | 10 | 0.90 |
-| Ni | 10 | 8000 | 25 | 0.88 | 100 | 2000 | 3 | 0.85 |
-| Cu | 10 | 4000 | 30 | 0.85 | 90 | 800 | 7 | 0.82 |
-
-*Sources: Diaz-Morales 2020 (Au oxide), Weininger 1963 (Ni film), Ambrose 1973 (Cu alkaline).*
-
----
-
-## 5. Bibliographical References
+## 4. Bibliographical References
 
 | # | Reference | Usage |
 |---|-----------|-------|
