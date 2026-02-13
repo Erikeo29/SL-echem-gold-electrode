@@ -32,12 +32,12 @@ Spectroscopie d'impédance électrochimique sur la même électrode Au/Ni/Cu. Le
 
 ## 3. Navigation
 
-La navigation dans cette application est structurée autour des outils suivants :
+La navigation dans les différentes pages de cette application est structurée avec les outils suivants :
 
-1. **Menu latéral (à gauche)** : navigation principale entre les sections du projet.
+1. **Menu latéral (à gauche)** : outil de navigation entre les différentes sections du projet :
    - **Introduction** : contexte scientifique et présentation des systèmes.
    - **Comparaison des études** : tableau synthétique des deux approches.
-   - **Pages par étude** : chaque étude contient des onglets Physique (description des modèles physiques et de résolution numérique utilisés), Code (codes entièrement développés dans ce projet et pouvant être dupliqué) et Résultats (modélisations visuelles).
+   - **Résultats de modélisation** : chaque étude contient des onglets Physique (description des modèles physiques et de résolution numérique utilisés), Code (codes entièrement développés dans ce projet et pouvant être dupliqué) et Résultats (modélisations visuelles).
    - **Annexes** : conclusion, lexique, équations clés, références bibliographiques et une page d'histoire sur les principaux chercheurs et scientifiques ayant développés les concepts physiques et numériques présentés.
 
 2. **Boutons de navigation flottants (à droite)** : déplacement rapide haut/bas de page.

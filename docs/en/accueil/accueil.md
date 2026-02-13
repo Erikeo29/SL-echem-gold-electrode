@@ -32,12 +32,12 @@ Electrochemical impedance spectroscopy on the same Au/Ni/Cu electrode. The model
 
 ## 3. Navigation
 
-The navigation in this application is structured around the following tools:
+Navigation through the different pages of this application is structured with the following tools:
 
-1. **Side menu (left)**: main navigation between project sections.
+1. **Side menu (left)**: navigation tool between the different sections of the project:
    - **Introduction**: scientific context and system presentation.
    - **Study comparison**: summary table of the two approaches.
-   - **Study pages**: each study contains Physics (description of the physical models and numerical resolution methods used), Code (codes entirely developed in this project, which can be duplicated) and Results (visual modelling) tabs.
+   - **Modeling results**: each study contains Physics (description of the physical models and numerical resolution methods used), Code (codes entirely developed in this project, which can be duplicated) and Results (visual modelling) tabs.
    - **Appendices**: conclusion, glossary, key equations, bibliographical references and a history page on the key researchers and scientists who developed the physical and numerical concepts presented.
 
 2. **Floating navigation buttons (right)**: quick scroll up/down.
