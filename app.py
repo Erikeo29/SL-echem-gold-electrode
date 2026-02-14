@@ -201,7 +201,25 @@ else:
 # ===== PAGE ACCUEIL =====
 if selected_page == gen_pages[0]:
     st.title(t("title"))
-    st.markdown(load_file_content("accueil/accueil.md"))
+
+    # --- Layout côte-à-côte : note auteur (gauche) + graphes (droite) ---
+    accueil_content = load_file_content("accueil/accueil.md")
+    parts = accueil_content.split("---", 1)
+
+    col_text, col_img = st.columns([3, 1])
+    with col_text:
+        st.markdown(parts[0])
+    with col_img:
+        cv_png = os.path.join(DATA_PATH, "cv_oxide_study", "png", "Au80_Ni10_Cu10_pH7_CV.png")
+        nyquist_png = os.path.join(DATA_PATH, "eis_study", "run_013", "Au80%_Ni10%_Cu10%_Nyquist.png")
+        if os.path.exists(cv_png):
+            st.image(cv_png, caption="Cyclic Voltammetry (CV)")
+        if os.path.exists(nyquist_png):
+            st.image(nyquist_png, caption="Nyquist (EIS)")
+
+    # --- Reste du contenu en pleine largeur ---
+    if len(parts) > 1:
+        st.markdown("---" + parts[1])
 
 # ===== PAGE INTRODUCTION =====
 elif selected_page == gen_pages[1]:

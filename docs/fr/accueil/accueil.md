@@ -54,6 +54,6 @@ La navigation dans les différentes pages de cette application est structurée a
 
 ## 4. Note méthodologique
 
-Les résultats présentés proviennent de simulations **pré-calculées**. Le projet a été réalisé sur un PC portable standard : environnement Linux via WSL2, processeur 1.5-3.5 GHz, 6 CPU / 12 threads, 32 Go de RAM. Les temps de calcul varient de quelques secondes (étude EIS, calcul algébrique) à 30 secondes (étude CV, ODE) par simulation unitaire.
+Les résultats présentés proviennent de simulations **pré-calculées**. Le projet a été réalisé sur un PC portable standard : environnement Linux via WSL2, processeur 1.5-3.5 GHz, 6 CPU / 12 threads, 32 Go de RAM, 8 Go de GPU. Les temps de calcul varient de quelques secondes (étude EIS, calcul algébrique) à 30 secondes (étude CV, ODE) par simulation unitaire.
 
 Cette application est donc un **visualiseur de résultats**, non un simulateur en temps réel. En effet, la réalisation de ces simulations nécessite des configurations spécifiques d'environnements et de packages Python (numpy). Les codes sont disponibles dans les onglets "Code" de chaque étude afin de permettre leur reproduction sur d'autres machines.

@@ -10,7 +10,7 @@
 
 ## 1. Principe de la voltamétrie cyclique
 
-La voltamétrie cyclique (CV) est sans doute la méthode électrochimique la plus utilisée pour acquérir des informations qualitatives sur les réactions électrochimiques.
+La voltamétrie cyclique (CV) est une méthode électrochimique très utilisée pour acquérir des informations qualitatives sur les réactions électrochimiques.
 
 Elle consiste à balayer le potentiel d'une électrode de travail à une vitesse constante $v$ entre deux bornes, tout en mesurant le courant résultant. Le graphique du courant en fonction du potentiel est appelé un **voltammogramme**.
 
@@ -25,14 +25,14 @@ Les diagrammes de **Nyquist** et de **Bode** révèlent les résistances (soluti
 ## 3. Enjeux de la modélisation
 
 La simulation numérique permet de :
-1. Prédire la forme des pics de courant en fonction de la vitesse de balayage (CV)
-2. Diagnostiquer la présence et les propriétés de films passifs
-3. Séparer les contributions résistives et capacitives de l'interface (EIS)
-4. Quantifier l'influence du pH et de la composition sur le comportement électrochimique
+1. Prédire la forme des pics de courant en fonction de la vitesse de balayage (CV).
+2. Diagnostiquer la présence et les propriétés de films passifs.
+3. Séparer les contributions résistives et capacitives de l'interface (EIS).
+4. Quantifier l'influence du pH et de la composition sur le comportement électrochimique.
 
 Dans ce projet, deux études complémentaires couvrent :
-- **Étude 1** : la voltamétrie cyclique sur une électrode **Au avec impuretés Ni et Cu**, avec oxydes de surface et modèle de Langmuir
-- **Étude 2** : la spectroscopie d'impédance sur la même électrode, avec circuit équivalent adaptatif
+- **Étude 1** : la voltamétrie cyclique sur une électrode **Au avec impuretés Ni et Cu**, avec oxydes de surface et modèle de Langmuir.
+- **Étude 2** : la spectroscopie d'impédance sur la même électrode, avec circuit équivalent adaptatif.
 
 ---
 

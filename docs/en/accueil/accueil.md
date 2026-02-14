@@ -54,6 +54,6 @@ Navigation through the different pages of this application is structured with th
 
 ## 4. Methodological note
 
-The results presented come from **pre-computed** simulations. The project was carried out on a standard laptop: Linux environment via WSL2, 1.5-3.5 GHz processor, 6 CPU / 12 threads, 32 GB RAM. Computation times range from a few seconds (EIS study, algebraic calculation) to 30 seconds (CV study, ODE) per unit simulation.
+The results presented come from **pre-computed** simulations. The project was carried out on a standard laptop: Linux environment via WSL2, 1.5-3.5 GHz processor, 6 CPU / 12 threads, 32 GB RAM, 8 GB GPU. Computation times range from a few seconds (EIS study, algebraic calculation) to 30 seconds (CV study, ODE) per unit simulation.
 
 This application is therefore a **results viewer**, not a real-time simulator. Indeed, running these simulations requires specific environment configurations and Python packages (numpy). The codes are available in the "Code" tabs of each study so they can be copied and used to reproduce these simulations on other machines.
