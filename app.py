@@ -180,6 +180,8 @@ if is_chatbot_enabled():
 
 st.sidebar.markdown("---")
 st.sidebar.markdown(t("version_info"))
+st.sidebar.markdown("")
+st.sidebar.markdown("© 2025 Eric QUEAU — [MIT License](https://opensource.org/licenses/MIT)")
 
 # --- Déterminer la page active ---
 # Priorité : modèles > annexes > général
@@ -418,10 +420,6 @@ elif selected_page in annex_pages:
         st.markdown(load_file_content(annex_files[idx]))
     except Exception as e:
         st.error(f"Erreur de chargement: {e}")
-
-# --- Footer licence ---
-st.markdown("---")
-st.markdown("© 2025 Eric QUEAU — [MIT License](https://opensource.org/licenses/MIT)")
 
 # --- Ancre de fin de page ---
 st.markdown('<div id="bottom"></div>', unsafe_allow_html=True)
