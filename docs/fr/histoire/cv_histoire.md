@@ -29,8 +29,8 @@ Le passage aux électrodes solides (Pt, Au, C) et l'avènement de l'électroniqu
 
 | Année | Contribution |
 |-------|-------------|
-| 1948 | **Randles** (UK) et **Sevcik** (Tchécoslovaquie) publient l'équation du courant de pic |
-| 1964 | **Nicholson et Shain** publient la "théorie des voltammogrammes stationnaires" |
+| 1948 | **Randles** (UK) et **Sevcik** (Tchécoslovaquie) publient indépendamment l'équation du courant de pic |
+| 1964 | **Nicholson et Shain** publient la "théorie de la polarographie à électrode stationnaire" |
 
 $$ I_p = 2.69 \times 10^5 n^{3/2} A D^{1/2} C v^{1/2} $$
 
@@ -60,8 +60,8 @@ Parallèlement à la CV, une autre technique de caractérisation se développe d
 
 | Année | Événement |
 |-------|-----------|
-| ~1900 | **Emil Warburg** est le premier à étendre le concept d'impédance aux systèmes électrochimiques, en dérivant la fonction d'impédance d'un processus diffusionnel qui porte encore son nom |
-| 1880s | **Oliver Heaviside** pose les bases de la théorie des systèmes linéaires et définit les termes « impédance », « admittance » et « réactance » |
+| 1899 | **Emil Warburg** est le premier à étendre le concept d'impédance aux systèmes électrochimiques, en dérivant la fonction d'impédance d'un processus diffusionnel qui porte encore son nom |
+| 1880s | **Oliver Heaviside** pose les bases de la théorie des systèmes linéaires et définit les termes « impédance » et « admittance » |
 | 1940s | L'invention du **potentiostat** rend possible les mesures d'impédance à potentiel contrôlé |
 | 1960s | **Epelboin et son groupe à Paris** propulsent l'EIS au premier plan de la recherche électrochimique |
 | 1970s | Le développement des **analyseurs de réponse en fréquence** (FRA) permet d'explorer les très basses fréquences |

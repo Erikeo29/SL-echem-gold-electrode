@@ -181,6 +181,7 @@ if is_chatbot_enabled():
 st.sidebar.markdown("---")
 st.sidebar.markdown(t("version_info"))
 st.sidebar.markdown("")
+st.sidebar.markdown("")
 st.sidebar.markdown("© 2025 Eric QUEAU — [MIT License](https://opensource.org/licenses/MIT)")
 
 # --- Déterminer la page active ---

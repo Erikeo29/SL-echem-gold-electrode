@@ -50,8 +50,8 @@ In parallel with CV, another characterization technique emerged in the frequency
 
 | Year | Milestone |
 |------|-----------|
-| ~1900 | **Emil Warburg** was the first to extend the concept of impedance to electrochemical systems, deriving the impedance function for a diffusional process that still bears his name |
-| 1880s | **Oliver Heaviside** laid the foundations of Linear Systems Theory and coined the terms "impedance", "admittance", and "reactance" |
+| 1899 | **Emil Warburg** was the first to extend the concept of impedance to electrochemical systems, deriving the impedance function for a diffusional process that still bears his name |
+| 1880s | **Oliver Heaviside** laid the foundations of Linear Systems Theory and coined the terms "impedance" and "admittance" |
 | 1940s | The invention of the **potentiostat** made controlled-potential impedance measurements possible |
 | 1960s | **Epelboin and his group in Paris** propelled EIS to the forefront of electrochemical research |
 | 1970s | The development of **Frequency Response Analyzers** (FRA) enabled exploration of very low frequencies |

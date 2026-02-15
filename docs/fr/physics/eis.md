@@ -69,7 +69,7 @@ La nature du film passif dépend du métal et du pH. Les équations redox détai
 |---|---|---|---|
 | **Nom** | Randles simple | Circuit variable | 2 constantes de temps (tous métaux) |
 | **Circuit** | `Rs → [CPE_dl ‖ (Rct + Z_W)]` | Au, Ni : Randles ; Cu : `Rs → [CPE_film ‖ R_film] → [CPE_dl ‖ (Rct + Z_W)]` | `Rs → [CPE_oxide ‖ R_oxide] → [CPE_dl ‖ (Rct + Z_W)]` |
-| **Justification** | Au nu ; Ni/Cu dissolution active (pas de passivation < pH 5) | Au nu ; ⚠️ Ni instable — NiOOH se dissout (ACS Omega 2016) ; Cu : Cu₂O semi-protecteur (R_film = 400 Ω) | Tous passivés : Au(OH)₃ (Burke 1997), Ni(OH)₂/NiOOH (R_film = 2 000 Ω), Cu₂O/CuO |
+| **Justification** | Au nu ; Ni/Cu dissolution active (pas de passivation < pH 5) | Au nu ; ⚠️ Ni instable — NiOOH se dissout (ACS Omega 2017) ; Cu : Cu₂O semi-protecteur (R_film = 400 Ω) | Tous passivés : Au(OH)₃ (Burke 1997), Ni(OH)₂/NiOOH (R_film = 2 000 Ω), Cu₂O/CuO |
 | **Signature Nyquist** | 1 semicercle + Warburg 45° | 1 arc (Au, Ni) ou 2 arcs superposés (Cu) + Warburg | 2 arcs nets + Warburg |
 
 ---
@@ -109,10 +109,10 @@ avec $Z_{film\parallel} = \frac{R_{film} \cdot Z_{CPE,film}}{R_{film} + Z_{CPE,f
 | [1] | Hamelin *et al.* (1994) — *Electrochim. Acta* — Au/H₂SO₄ | Rct, Cdl Au |
 | [2] | Song *et al.* (2025) — *ChemElectroChem* | Cdl vs pH |
 | [3] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* 39, 969 | Pourbaix Ni |
-| [4] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* | Pourbaix Cu |
-| [5] | Diaz-Morales *et al.* (2020) — *ACS Catal.* 10, 7532 | Au oxide OER |
-| [6] | ACS Omega (2016) — DOI: 10.1021/acsomega.6b00448 | NiOOH instabilité |
-| [8] | Weininger & Breiter (1963) — *Electrochim. Acta* 8, 575 | Ni film EIS |
+| [4] | Beverskog & Puigdomenech (1997) — *J. Electrochem. Soc.* 144, 3476 | Pourbaix Cu |
+| [5] | Diaz-Morales *et al.* (2020) — *ACS Catal.* 10, 12582 | Au oxide OER |
+| [6] | ACS Omega (2017) — DOI: 10.1021/acsomega.6b00448 | NiOOH instabilité |
+| [8] | Weininger & Breiter (1963) — *J. Electrochem. Soc.* 110, 484-490 | Ni film EIS |
 | [9] | Ambrose *et al.* (1973) — *J. Electroanal. Chem.* 47, 47 | Cu alcalin |
 | [11] | Lazanas & Prodromidis (2023) — *ACS Meas. Sci. Au* 3(3), 162 | Tutorial EIS |
 | [12] | Gamry Instruments — "Basics of EIS" | Application Note |

@@ -16,7 +16,7 @@
 | Constante de Faraday | $F$ | 96 485 | C/mol |
 | Constante des gaz | $R$ | 8.314 | J/(mol·K) |
 | Température standard | $T$ | 298.15 | K (25°C) |
-| $f = F/RT$ | $f$ | 38.94 | V⁻¹ |
+| $f = F/RT$ | $f$ | 38.92 | V⁻¹ |
 | Surface d'électrode | $A$ | 1.77×10⁻⁶ | m² |
 
 ---
@@ -145,7 +145,7 @@ Sources : Hamelin 1994 [1] (Au/H₂SO₄), Beverskog 1997 [3,4] (Pourbaix Ni/Cu)
 | pH | Au | Ni | Cu | Commentaire |
 |:--:|:--:|:--:|:--:|-------------|
 | 3 | 0 | 0 | 0 | Tous en dissolution, pas de film stable |
-| 7 | 0 | 0 ⚠️ | 400 Ω | ⚠️ Ni instable à pH 7 (ACS Omega 2016 [6]) |
+| 7 | 0 | 0 ⚠️ | 400 Ω | ⚠️ Ni instable à pH 7 (ACS Omega 2017 [6]) |
 | 11 | 150 Ω | 2 000 Ω | 800 Ω | Films stables sur tous les métaux |
 
 Le R_film de Ni à pH 11 (2 000 Ω) est le plus élevé, reflétant un film Ni(OH)₂/NiOOH compact et protecteur — cohérent avec les mesures de Weininger & Breiter (1963) sur Ni en NaOH.
@@ -161,9 +161,9 @@ Le R_film de Ni à pH 11 (2 000 Ω) est le plus élevé, reflétant un film Ni(O
 | [1] | Hamelin *et al.* (1994) — *Electrochim. Acta* — Au dans H₂SO₄ | Rct Au pH 3, Cdl Au |
 | [2] | Song *et al.* (2025) — *ChemElectroChem* | Cdl vs pH pour Au |
 | [3] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* 39, 969 | Pourbaix Ni, OCP Ni |
-| [4] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* | Pourbaix Cu, OCP Cu |
-| [6] | ACS Omega (2016) — DOI: 10.1021/acsomega.6b00448 | Instabilité NiOOH pH 7 |
-| [8] | Weininger & Breiter (1963) — *Electrochim. Acta* 8, 575 | Rct Ni, R_film Ni pH 11 |
+| [4] | Beverskog & Puigdomenech (1997) — *J. Electrochem. Soc.* 144, 3476 | Pourbaix Cu, OCP Cu |
+| [6] | ACS Omega (2017) — DOI: 10.1021/acsomega.6b00448 | Instabilité NiOOH pH 7 |
+| [8] | Weininger & Breiter (1963) — *J. Electrochem. Soc.* 110, 484-490 | Rct Ni, R_film Ni pH 11 |
 | [9] | Ambrose *et al.* (1973) — *J. Electroanal. Chem.* 47, 47 | R_film Cu alcalin |
 | [11] | Lazanas & Prodromidis (2023) — *ACS Meas. Sci. Au* 3(3), 162 | CPE, gammes typiques |
 
@@ -213,7 +213,7 @@ $$E_{OER}(pH) = +1.50 - 0.059 \times pH \text{ V}$$
 | **OCP par potentiel mixte** | $E_{ocp} = \sum x_i E_{ocp,i}$ | Ignore interactions galvaniques |
 | **Rct bibliographiques** | Valeurs typiques publiées | Pas dérivés de Butler-Volmer |
 | **CPE au lieu de C pure** | Surfaces réelles rugueuses | n empirique, pas relié à la géométrie |
-| **Ni instable à pH 7** | ACS Omega 2016, Pourbaix | Simplifié (pas de film transitoire) |
+| **Ni instable à pH 7** | ACS Omega 2017, Pourbaix | Simplifié (pas de film transitoire) |
 
 ### Ce que les modèles **ne capturent pas**
 
