@@ -52,6 +52,7 @@ TRANSLATIONS = {
         "chat_error": "Erreur de connexion à l'API.",
         "chat_clear": "Effacer",
         "chat_api_missing": "Clé API manquante. Configurez GROQ_API_KEY.",
+        "chat_disclaimer": "⚠️ Réponse générée par IA — peut contenir des erreurs ou omissions. Vérifiez toujours les informations auprès des sources scientifiques reconnues.",
     },
     "en": {
         "title": "CV & EIS — Au Electrode with Ni and Cu Impurities",
@@ -103,6 +104,7 @@ TRANSLATIONS = {
         "chat_error": "API connection error.",
         "chat_clear": "Clear",
         "chat_api_missing": "API key missing. Configure GROQ_API_KEY.",
+        "chat_disclaimer": "⚠️ AI-generated response — may contain errors or omissions. Always verify information against recognized scientific sources.",
     }
 }
 

@@ -100,8 +100,13 @@ def render_chatbot():
             with st.chat_message(msg["role"]):
                 st.markdown(msg["content"])
 
+        # Disclaimer après les réponses
+        if st.session_state.chat_messages:
+            st.caption(t("chat_disclaimer"))
+
         if prompt := st.chat_input(t("chat_placeholder")):
             with st.chat_message("user"):
                 st.markdown(prompt)
             with st.chat_message("assistant"):
                 st.write_stream(stream_groq_response(prompt))
+            st.caption(t("chat_disclaimer"))
