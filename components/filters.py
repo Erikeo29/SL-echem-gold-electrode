@@ -1,4 +1,4 @@
-"""Composants de filtres en cascade — Électrode Au/Ni/Cu."""
+"""Composants de filtres en cascade - Électrode Au/Ni/Cu."""
 import os
 import pandas as pd
 import streamlit as st

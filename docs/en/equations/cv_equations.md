@@ -161,11 +161,11 @@ $$C_{dl,eff} = \frac{1}{\omega_{max} \cdot R_{ct}}$$
 
 | Nyquist observation | Interpretation |
 |---------------------|----------------|
-| Clear semicircle + 45° line | $R_{ct}$ and $\sigma$ comparable — mixed regime |
+| Clear semicircle + 45° line | $R_{ct}$ and $\sigma$ comparable - mixed regime |
 | 45° line only | High $k^0$ → $R_{ct} \approx 0$, pure diffusion |
 | Semicircle only | High $D$ → $\sigma \approx 0$, pure charge transfer |
-| Flattened semicircle | $n_{CPE} < 1$ — heterogeneous surface |
-| 2 distinct arcs | Passive film (EIS Au/Ni/Cu electrode) — 2 time constants |
+| Flattened semicircle | $n_{CPE} < 1$ - heterogeneous surface |
+| 2 distinct arcs | Passive film (EIS Au/Ni/Cu electrode) - 2 time constants |
 
 ---
 

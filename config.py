@@ -1,4 +1,4 @@
-"""Configuration globale de l'application — Électrode Au/Ni/Cu."""
+"""Configuration globale de l'application - Électrode Au/Ni/Cu."""
 import os
 
 # --- Chemins ---

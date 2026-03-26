@@ -30,12 +30,12 @@
 
 L'étude 1 modélise des réactions purement de surface : la couverture $\theta$ est uniforme sur l'électrode. Le courant dépend de $d\theta/dt$ et l'hystérésis ($E^0_{ox} \neq E^0_{red}$) capture la nucléation des oxydes.
 
-L'étude 2 sonde la même électrode Au/Ni/Cu à l'**équilibre** via une perturbation fréquentielle. Elle sépare les contributions résistives (Rs, Rct, R_film) des contributions capacitives (Cdl, CPE) — une décomposition impossible en CV.
+L'étude 2 sonde la même électrode Au/Ni/Cu à l'**équilibre** via une perturbation fréquentielle. Elle sépare les contributions résistives (Rs, Rct, R_film) des contributions capacitives (Cdl, CPE) - une décomposition impossible en CV.
 
 ### Réversibilité
 
 - Étude 1 : l'hystérésis des oxydes impose toujours $\Delta E_p > 100$ mV.
-- Étude 2 : pas de notion de ΔEp — la réversibilité se lit dans $R_{ct}$ et la présence de films passifs.
+- Étude 2 : pas de notion de ΔEp - la réversibilité se lit dans $R_{ct}$ et la présence de films passifs.
 
 ---
 

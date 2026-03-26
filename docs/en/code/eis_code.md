@@ -145,4 +145,4 @@ Each run produces: `eis_data.csv`, `parameters.txt`, `metrics.txt`, `*_Nyquist.p
 
 - **numpy**: complex impedance calculations
 - **matplotlib**: Nyquist and Bode diagrams
-- No FEM solver — purely algebraic computation
+- No FEM solver - purely algebraic computation

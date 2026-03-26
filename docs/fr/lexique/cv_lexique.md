@@ -131,7 +131,7 @@
 | $R_{ct}$ | Résistance de transfert de charge | Ω | Cinétique de la réaction redox |
 | $R_{film}$ | Résistance de film passif | Ω | Film d'oxyde (EIS électrodes Au/Ni/Cu) |
 | $Q_0$ | Paramètre CPE | F·s^(n-1) | Pseudo-capacité (CPE) |
-| $n_{CPE}$ | Exposant CPE | — | 1 = capacité idéale, < 1 = non idéale |
+| $n_{CPE}$ | Exposant CPE | - | 1 = capacité idéale, < 1 = non idéale |
 | $\sigma$ | Coefficient de Warburg | Ω·s⁻⁰·⁵ | Diffusion semi-infinie |
 | $C_{dl}$ | Capacité de double couche | F | Interface électrode/solution |
 
@@ -141,7 +141,7 @@
 
 | Symbole | Nom | Unité | Description |
 |---------|-----|-------|-------------|
-| $n_{el}$ | Nombre d'électrons transférés | — | Électrons par réaction élémentaire |
+| $n_{el}$ | Nombre d'électrons transférés | - | Électrons par réaction élémentaire |
 | $A$ | Surface de l'électrode | m² | Surface active de l'électrode de travail |
 | $\omega$ | Pulsation | rad/s | $\omega = 2\pi f$ |
 | $\omega_{max}$ | Pulsation au sommet | rad/s | Fréquence caractéristique du semicercle |

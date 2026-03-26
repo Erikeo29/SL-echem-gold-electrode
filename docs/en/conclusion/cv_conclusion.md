@@ -23,5 +23,5 @@ This work constitutes a starting point for more in-depth studies, rather than a 
 - Coupling with homogeneous chemical reactions (EC, ECE mechanisms)
 - Extension to complex 3D geometries (microelectrodes)
 - **Inverse EIS fitting**: from experimental data → extract Rs, Rct, Cdl, R_film via `scipy.optimize`
-- **CV–EIS coupling**: use kinetic parameters from Study 1 (pH, composition) as input for the EIS model (Study 2)
+- **CV-EIS coupling**: use kinetic parameters from Study 1 (pH, composition) as input for the EIS model (Study 2)
 - **PINNs (Physics-Informed Neural Networks)**: train a neural network constrained by Langmuir-Butler-Volmer equations to accelerate solving or parametric inversion

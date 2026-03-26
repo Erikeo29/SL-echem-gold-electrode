@@ -1,6 +1,6 @@
 &nbsp;
 
-**About this project** — *This physical modeling project was designed entirely by the author, from a blank page through to its deployment on this website. The content was developed based on the author's own knowledge, supplemented by a documentary watch on physical concepts and numerical tools.*
+**About this project** - *This physical modeling project was designed entirely by the author, from a blank page through to its deployment on this website. The content was developed based on the author's own knowledge, supplemented by a documentary watch on physical concepts and numerical tools.*
 
 *The objective is to enable advanced multiphysics modeling using free and open-source tools.*
 
@@ -30,7 +30,7 @@ This application gathers **electrochemical** simulations solved in Python. The o
 
 ### Study 1: CV of an Au electrode with Ni and Cu impurities
 
-Simulation of surface reactions (metal oxides) on a gold electrode with nickel and copper traces. The model is based on a Langmuir–Butler-Volmer ODE (ordinary differential equation) solved by an analytical implicit scheme (without numerical iteration). The parametric study covers pH, electrode composition and double-layer capacitance $C_{dl}$.
+Simulation of surface reactions (metal oxides) on a gold electrode with nickel and copper traces. The model is based on a Langmuir-Butler-Volmer ODE (ordinary differential equation) solved by an analytical implicit scheme (without numerical iteration). The parametric study covers pH, electrode composition and double-layer capacitance $C_{dl}$.
 
 ### Study 2: EIS of an Au electrode with Ni and Cu impurities
 

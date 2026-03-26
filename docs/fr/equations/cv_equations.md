@@ -161,11 +161,11 @@ $$C_{dl,eff} = \frac{1}{\omega_{max} \cdot R_{ct}}$$
 
 | Observation Nyquist | Interprétation |
 |---------------------|----------------|
-| Semicercle net + droite 45° | $R_{ct}$ et $\sigma$ comparables — régime mixte |
+| Semicercle net + droite 45° | $R_{ct}$ et $\sigma$ comparables - régime mixte |
 | Droite 45° uniquement | $k^0$ élevé → $R_{ct} \approx 0$, diffusion pure |
 | Semicercle seul | $D$ élevé → $\sigma \approx 0$, transfert de charge pur |
-| Semicercle aplati | $n_{CPE} < 1$ — surface hétérogène |
-| 2 arcs distincts | Film passif (EIS électrodes Au/Ni/Cu) — 2 constantes de temps |
+| Semicercle aplati | $n_{CPE} < 1$ - surface hétérogène |
+| 2 arcs distincts | Film passif (EIS électrodes Au/Ni/Cu) - 2 constantes de temps |
 
 ---
 

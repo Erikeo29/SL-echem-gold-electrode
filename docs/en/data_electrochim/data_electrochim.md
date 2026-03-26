@@ -2,8 +2,8 @@
 
 **Contents:**
 1. Fundamental constants
-2. Surface oxides and kinetics (study 1 — CV)
-3. Impedance parameters at OCP (study 2 — EIS)
+2. Surface oxides and kinetics (study 1 - CV)
+3. Impedance parameters at OCP (study 2 - EIS)
 4. Electrochemical walls (HER/OER)
 5. Model hypotheses and limitations
 
@@ -21,7 +21,7 @@
 
 ---
 
-## 2. Surface oxides and kinetics (study 1 — CV)
+## 2. Surface oxides and kinetics (study 1 - CV)
 
 ### Oxide formation redox equations
 
@@ -29,13 +29,13 @@ The nature of the passive film depends on the metal and pH. Here are the anodic 
 
 > **Note**: all potentials are expressed **vs Ag/AgCl (sat. KCl)** ($E_{\text{Ag/AgCl}} = E_{\text{SHE}} - 0.197$ V).
 
-#### Gold (Au) — multi-site oxidation
+#### Gold (Au) - multi-site oxidation
 
 $$2\text{Au} + 6\text{OH}^- \longrightarrow \text{Au}_2\text{O}_3 + 3\text{H}_2\text{O} + 6e^-$$
 
 Gold forms a reversible oxide at all pH values. In alkaline media, the hydroxide form Au(OH)₃ (β-oxide) is preferentially formed. The oxidation plateau is modeled with 20 uniform sites.
 
-#### Nickel (Ni) — pH-dependent behavior
+#### Nickel (Ni) - pH-dependent behavior
 
 **Dissolution in acidic media** (pH < 2):
 
@@ -47,17 +47,17 @@ $$\text{Ni(OH)}_2 + \text{OH}^- \longrightarrow \text{NiOOH} + \text{H}_2\text{O
 
 This couple is reversible at pH 13 and partially visible at pH 7 (weak signal, overlaps with Au plateau).
 
-#### Copper (Cu) — sequential oxidation
+#### Copper (Cu) - sequential oxidation
 
 **Dissolution in acidic media** (pH < 4):
 
 $$\text{Cu} \longrightarrow \text{Cu}^{2+} + 2e^- \quad (E^0 = +0.14 \text{ V vs Ag/AgCl})$$
 
-**First oxidation** — Cu₂O formation (pH ≥ 7):
+**First oxidation** - Cu₂O formation (pH ≥ 7):
 
 $$2\text{Cu} + 2\text{OH}^- \longrightarrow \text{Cu}_2\text{O} + \text{H}_2\text{O} + 2e^-$$
 
-**Second oxidation** — CuO formation:
+**Second oxidation** - CuO formation:
 
 $$\text{Cu}_2\text{O} + 2\text{OH}^- \longrightarrow 2\text{CuO} + \text{H}_2\text{O} + 2e^-$$
 
@@ -67,15 +67,15 @@ $$M + H_2O \rightleftharpoons MOH + H^+ + e^-$$
 
 where $M$ = Au, Ni, or Cu.
 
-### Standard potentials — pH 1 (H₂SO₄)
+### Standard potentials - pH 1 (H₂SO₄)
 
 | Metal | Mechanism | $E^0_{ox}$ (V) | $E^0_{red}$ (V) | $\Delta E_{hyst}$ (mV) |
 |-------|-----------|:--------------:|:---------------:|:----------------------:|
-| **Au** | Reversible oxide | 1.10 → 1.50 | 0.90 | 200–600 |
-| **Ni** | Dissolution | −0.454 | — | — |
-| **Cu** | Dissolution | +0.14 | — | — |
+| **Au** | Reversible oxide | 1.10 → 1.50 | 0.90 | 200-600 |
+| **Ni** | Dissolution | −0.454 | - | - |
+| **Cu** | Dissolution | +0.14 | - | - |
 
-### Standard potentials — pH 7 (phosphate buffer)
+### Standard potentials - pH 7 (phosphate buffer)
 
 | Metal | Mechanism | $E^0_{ox}$ (V) | $E^0_{red}$ (V) | Note |
 |-------|-----------|:--------------:|:---------------:|------|
@@ -83,7 +83,7 @@ where $M$ = Au, Ni, or Cu.
 | **Ni** | Partial oxide | +0.78 | +0.59 | Ni(OH)₂/NiOOH, Nernst from pH 13 |
 | **Cu** | Partial oxide | −0.15 / +0.05 | −0.275 | Cu₂O (60%) + CuO (40%) |
 
-### Standard potentials — pH 13 (KOH 0.1M)
+### Standard potentials - pH 13 (KOH 0.1M)
 
 | Metal | Mechanism | $E^0_{ox}$ (V) | $E^0_{red}$ (V) | Note |
 |-------|-----------|:--------------:|:---------------:|------|
@@ -97,13 +97,13 @@ where $M$ = Au, Ni, or Cu.
 |-----------|:--:|:--:|:--:|------|
 | $k_0$ | 2.0 | 5.0 | 5.0 | s⁻¹ |
 | $\Gamma_{max}$ | 4×10⁻⁵ | 3×10⁻⁵ | 3.5×10⁻⁵ | mol/m² |
-| $\alpha$ | 0.5 | 0.5 | 0.5 | — |
+| $\alpha$ | 0.5 | 0.5 | 0.5 | - |
 
 **Note**: $k_0$ is in **s⁻¹** (surface reaction), not m/s!
 
 ---
 
-## 3. Impedance parameters at OCP (study 2 — EIS)
+## 3. Impedance parameters at OCP (study 2 - EIS)
 
 ### 3.1 Open circuit potential (OCP)
 
@@ -136,11 +136,11 @@ Rct reflects the speed of the faradaic reaction at OCP. It is related to the exc
 
 Sources: Hamelin 1994 [1] (Au/H₂SO₄), Beverskog 1997 [3,4] (Pourbaix Ni/Cu), Weininger 1963 [8] (Ni/NaOH), Ambrose 1973 [9] (Cu alkaline).
 
-> **Validation**: Rct measured experimentally on polycrystalline Au in H₂SO₄ gives 900–1,300 Ω·cm² (Piela & Wrona, *Electrochim. Acta* 1995). For Ni in acidic media, Saleh *et al.* (*Sci. Rep.* 2025) report 900–990 Ω·cm² — our 700 Ω is in the lower range, consistent with a more acidic pH.
+> **Validation**: Rct measured experimentally on polycrystalline Au in H₂SO₄ gives 900-1,300 Ω·cm² (Piela & Wrona, *Electrochim. Acta* 1995). For Ni in acidic media, Saleh *et al.* (*Sci. Rep.* 2025) report 900-990 Ω·cm² - our 700 Ω is in the lower range, consistent with a more acidic pH.
 
 ### 3.3 Passive film and double-layer capacitance
 
-**R_film** — Zero at pH 3 (no film: active dissolution), it appears as soon as the metal passivates:
+**R_film** - Zero at pH 3 (no film: active dissolution), it appears as soon as the metal passivates:
 
 | pH | Au | Ni | Cu | Comment |
 |:--:|:--:|:--:|:--:|---------|
@@ -148,9 +148,9 @@ Sources: Hamelin 1994 [1] (Au/H₂SO₄), Beverskog 1997 [3,4] (Pourbaix Ni/Cu),
 | 7 | 0 | 0 ⚠️ | 400 Ω | ⚠️ Ni unstable at pH 7 (ACS Omega 2017 [6]) |
 | 11 | 150 Ω | 2,000 Ω | 800 Ω | Stable films on all metals |
 
-Ni's R_film at pH 11 (2,000 Ω) is the highest, reflecting a compact and protective Ni(OH)₂/NiOOH film — consistent with Weininger & Breiter (1963) measurements on Ni in NaOH.
+Ni's R_film at pH 11 (2,000 Ω) is the highest, reflecting a compact and protective Ni(OH)₂/NiOOH film - consistent with Weininger & Breiter (1963) measurements on Ni in NaOH.
 
-**Q₀ (CPE)** — Non-ideal double-layer capacitance: 25–50 µF·s^(n-1)/cm² with exponent $n \approx 0.85$–$0.94$. These values are typical for polycrystalline electrodes (Lazanas 2023 [11]). The exponent $n$ decreases with increasing Ni and Cu content in the alloy (more heterogeneous surface).
+**Q₀ (CPE)** - Non-ideal double-layer capacitance: 25-50 µF·s^(n-1)/cm² with exponent $n \approx 0.85$-$0.94$. These values are typical for polycrystalline electrodes (Lazanas 2023 [11]). The exponent $n$ decreases with increasing Ni and Cu content in the alloy (more heterogeneous surface).
 
 > Full parameters (Q₀, n, σ, Q_film, n_film) and alloy mixing laws are detailed in the **Physics** tab of the EIS study.
 
@@ -158,14 +158,14 @@ Ni's R_film at pH 11 (2,000 Ω) is the highest, reflecting a compact and protect
 
 | # | Reference | Data used |
 |---|-----------|-----------|
-| [1] | Hamelin *et al.* (1994) — *Electrochim. Acta* — Au in H₂SO₄ | Rct Au pH 3, Cdl Au |
-| [2] | Song *et al.* (2025) — *ChemElectroChem* | Cdl vs pH for Au |
-| [3] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* 39, 969 | Pourbaix Ni, OCP Ni |
-| [4] | Beverskog & Puigdomenech (1997) — *J. Electrochem. Soc.* 144, 3476 | Pourbaix Cu, OCP Cu |
-| [6] | ACS Omega (2017) — DOI: 10.1021/acsomega.6b00448 | NiOOH instability at pH 7 |
-| [8] | Weininger & Breiter (1963) — *J. Electrochem. Soc.* 110, 484-490 | Rct Ni, R_film Ni pH 11 |
-| [9] | Ambrose *et al.* (1973) — *J. Electroanal. Chem.* 47, 47 | R_film Cu alkaline |
-| [11] | Lazanas & Prodromidis (2023) — *ACS Meas. Sci. Au* 3(3), 162 | CPE, typical ranges |
+| [1] | Hamelin *et al.* (1994) - *Electrochim. Acta* - Au in H₂SO₄ | Rct Au pH 3, Cdl Au |
+| [2] | Song *et al.* (2025) - *ChemElectroChem* | Cdl vs pH for Au |
+| [3] | Beverskog & Puigdomenech (1997) - *Corros. Sci.* 39, 969 | Pourbaix Ni, OCP Ni |
+| [4] | Beverskog & Puigdomenech (1997) - *J. Electrochem. Soc.* 144, 3476 | Pourbaix Cu, OCP Cu |
+| [6] | ACS Omega (2017) - DOI: 10.1021/acsomega.6b00448 | NiOOH instability at pH 7 |
+| [8] | Weininger & Breiter (1963) - *J. Electrochem. Soc.* 110, 484-490 | Rct Ni, R_film Ni pH 11 |
+| [9] | Ambrose *et al.* (1973) - *J. Electroanal. Chem.* 47, 47 | R_film Cu alkaline |
+| [11] | Lazanas & Prodromidis (2023) - *ACS Meas. Sci. Au* 3(3), 162 | CPE, typical ranges |
 
 ---
 
@@ -195,7 +195,7 @@ $$E_{OER}(pH) = +1.50 - 0.059 \times pH \text{ V}$$
 
 ## 5. Model hypotheses and limitations
 
-### Study 1 — surface oxide CV
+### Study 1 - surface oxide CV
 
 | Hypothesis | Justification | Limitation |
 |------------|---------------|------------|
@@ -205,7 +205,7 @@ $$E_{OER}(pH) = +1.50 - 0.059 \times pH \text{ V}$$
 | Ni partial at pH 7 | Ni(OH)₂/NiOOH visible but weak | Signal overlaps with Au plateau |
 | Ni/Cu dissolution at pH < 2 | Pourbaix diagram | No cathodic return |
 
-### Study 2 — EIS at OCP
+### Study 2 - EIS at OCP
 
 | Hypothesis | Justification | Limitation |
 |------------|---------------|------------|
@@ -226,4 +226,4 @@ $$E_{OER}(pH) = +1.50 - 0.059 \times pH \text{ V}$$
 
 ---
 
-*Study 1: parameters_oxide.py — Study 2: parameters_eis.py (run 04_EIS_with_OCP, 2026-02-06).*
+*Study 1: parameters_oxide.py - Study 2: parameters_eis.py (run 04_EIS_with_OCP, 2026-02-06).*

@@ -51,7 +51,7 @@
 ## 3. Electrochemical Impedance Spectroscopy (EIS)
 
 6. **Lazanas, A. C.; Prodromidis, M. I.**
-   *"Electrochemical Impedance Spectroscopy — A Tutorial."*
+   *"Electrochemical Impedance Spectroscopy - A Tutorial."*
    ACS Measurement Science Au **2023**, 3(3), 162-193.
    - [Article (ACS)](https://pubs.acs.org/doi/10.1021/acsmeasuresciau.2c00070)
 
@@ -71,13 +71,13 @@
     - [Article (JOSS)](https://joss.theoj.org/papers/10.21105/joss.02349)
 
 10. **Beverskog, B.; Puigdomenech, I.**
-    *"Revised Pourbaix diagrams for nickel at 25–300 °C."*
+    *"Revised Pourbaix diagrams for nickel at 25-300 °C."*
     Corros. Sci. **1997**, 39, 969-980.
     - [DOI: 10.1016/S0010-938X(97)00002-4](https://doi.org/10.1016/S0010-938X(97)00002-4)
     - Ni Pourbaix diagram, OCP as a function of pH.
 
 12. **Beverskog, B.; Puigdomenech, I.**
-    *"Revised Pourbaix diagrams for copper at 25–300 °C."*
+    *"Revised Pourbaix diagrams for copper at 25-300 °C."*
     J. Electrochem. Soc. **1997**, 144, 3476-3483.
     - [DOI: 10.1149/1.1838036](https://doi.org/10.1149/1.1838036)
     - Cu Pourbaix diagram, OCP as a function of pH.

@@ -145,4 +145,4 @@ Chaque run produit : `eis_data.csv`, `parameters.txt`, `metrics.txt`, `*_Nyquist
 
 - **numpy** : calcul d'impédance complexe
 - **matplotlib** : diagrammes Nyquist et Bode
-- Pas de solveur FEM — calcul purement algébrique
+- Pas de solveur FEM - calcul purement algébrique

@@ -1,6 +1,6 @@
 &nbsp;
 
-**À propos de ce projet** — *Ce projet de modélisation physique a été conçu intégralement par l'auteur, depuis une page blanche jusqu'à sa mise en ligne sur ce site. Le contenu a été élaboré sur la base de ses connaissances complétées par une veille documentaire sur les concepts physiques et les outils numériques.*
+**À propos de ce projet** - *Ce projet de modélisation physique a été conçu intégralement par l'auteur, depuis une page blanche jusqu'à sa mise en ligne sur ce site. Le contenu a été élaboré sur la base de ses connaissances complétées par une veille documentaire sur les concepts physiques et les outils numériques.*
 
 *L'objectif est de permettre la réalisation de modélisations multiphysiques avancées au moyen d'outils open-source gratuits.*
 
@@ -30,7 +30,7 @@ Cette application regroupe des simulations **électrochimiques** résolues en Py
 
 ### Étude 1 : CV d'une électrode Au avec impuretés Ni et Cu
 
-Simulation des réactions de surface (oxydes métalliques) sur une électrode d'or avec traces de nickel et de cuivre. Le modèle repose sur une ODE (équation différentielle ordinaire) du type Langmuir–Butler-Volmer résolue par un schéma implicite analytique (sans itération numérique). L'étude paramétrique porte sur le pH, la composition de l'électrode et la capacité de double couche $C_{dl}$.
+Simulation des réactions de surface (oxydes métalliques) sur une électrode d'or avec traces de nickel et de cuivre. Le modèle repose sur une ODE (équation différentielle ordinaire) du type Langmuir-Butler-Volmer résolue par un schéma implicite analytique (sans itération numérique). L'étude paramétrique porte sur le pH, la composition de l'électrode et la capacité de double couche $C_{dl}$.
 
 ### Étude 2 : EIS d'une électrode Au avec impuretés Ni et Cu
 

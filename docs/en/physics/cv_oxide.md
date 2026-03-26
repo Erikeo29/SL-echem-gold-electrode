@@ -15,7 +15,7 @@
 | Redox species | In solution | Adsorbed on surface |
 | Transport | Diffusion (2D FEM) | **None** |
 | Variable | $c(x,y,t)$ | $\theta(t) \in [0,1]$ |
-| Typical ΔEp | ~60 mV (reversible) | **100–2000 mV** |
+| Typical ΔEp | ~60 mV (reversible) | **100-2000 mV** |
 | Solver | Non-linear Newton | Analytical |
 
 This model handles **surface reactions**: formation and reduction of metal oxides/hydroxides directly on the electrode.
@@ -131,10 +131,10 @@ $$\theta^{n+1} = \frac{\theta^n + \Delta t \cdot k_{ox}}{1 + \Delta t \cdot (k_{
 
 | Observation | Simulation | Literature | OK |
 |-------------|:----------:|:----------:|:--:|
-| Au reduction peak (pH 1) | ~0.9 V | 0.85–0.95 V | yes |
-| Au reduction peak (pH 13) | ~0.15 V | 0.10–0.20 V | yes |
-| Au hysteresis | 200–600 mV | 250–600 mV | yes |
-| Ni(OH)₂/NiOOH peak (pH 13) | +0.43/+0.24 V | +0.40–0.50 V | yes |
+| Au reduction peak (pH 1) | ~0.9 V | 0.85-0.95 V | yes |
+| Au reduction peak (pH 13) | ~0.15 V | 0.10-0.20 V | yes |
+| Au hysteresis | 200-600 mV | 250-600 mV | yes |
+| Ni(OH)₂/NiOOH peak (pH 13) | +0.43/+0.24 V | +0.40-0.50 V | yes |
 | Ni weak at pH 7 | Partial signal | Weak signal expected | yes |
 | Ni/Cu dissolution (pH 1) | Irreversible | Pourbaix: corrosion | yes |
 

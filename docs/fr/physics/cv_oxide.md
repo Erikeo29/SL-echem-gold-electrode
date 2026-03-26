@@ -15,7 +15,7 @@
 | Espèces redox | En solution | Adsorbées à la surface |
 | Transport | Diffusion (FEM 2D) | **Aucun** |
 | Variable | $c(x,y,t)$ | $\theta(t) \in [0,1]$ |
-| ΔEp typique | ~60 mV (réversible) | **100–2000 mV** |
+| ΔEp typique | ~60 mV (réversible) | **100-2000 mV** |
 | Solver | Newton non-linéaire | Analytique |
 
 Ce modèle traite les **réactions de surface** : formation et réduction d'oxydes/hydroxydes métalliques directement sur l'électrode.
@@ -131,10 +131,10 @@ $$\theta^{n+1} = \frac{\theta^n + \Delta t \cdot k_{ox}}{1 + \Delta t \cdot (k_{
 
 | Observation | Simulation | Littérature | OK |
 |-------------|:----------:|:-----------:|:--:|
-| Pic réduction Au (pH 1) | ~0.9 V | 0.85–0.95 V | oui |
-| Pic réduction Au (pH 13) | ~0.15 V | 0.10–0.20 V | oui |
-| Hystérésis Au | 200–600 mV | 250–600 mV | oui |
-| Pic Ni(OH)₂/NiOOH (pH 13) | +0.43/+0.24 V | +0.40–0.50 V | oui |
+| Pic réduction Au (pH 1) | ~0.9 V | 0.85-0.95 V | oui |
+| Pic réduction Au (pH 13) | ~0.15 V | 0.10-0.20 V | oui |
+| Hystérésis Au | 200-600 mV | 250-600 mV | oui |
+| Pic Ni(OH)₂/NiOOH (pH 13) | +0.43/+0.24 V | +0.40-0.50 V | oui |
 | Ni faible à pH 7 | Signal partiel | Signal faible attendu | oui |
 | Dissolution Ni/Cu (pH 1) | Irréversible | Pourbaix : corrosion | oui |
 

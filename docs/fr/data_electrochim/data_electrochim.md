@@ -2,8 +2,8 @@
 
 **Sommaire :**
 1. Constantes fondamentales
-2. Oxydes de surface et cinétique (étude 1 — CV)
-3. Paramètres d'impédance à l'OCP (étude 2 — EIS)
+2. Oxydes de surface et cinétique (étude 1 - CV)
+3. Paramètres d'impédance à l'OCP (étude 2 - EIS)
 4. Murs électrochimiques (HER/OER)
 5. Hypothèses et limites des modèles
 
@@ -21,7 +21,7 @@
 
 ---
 
-## 2. Oxydes de surface et cinétique (étude 1 — CV)
+## 2. Oxydes de surface et cinétique (étude 1 - CV)
 
 ### Équations redox de formation des oxydes
 
@@ -29,13 +29,13 @@ La nature du film passif dépend du métal et du pH. Voici les demi-réactions d
 
 > **Note** : tous les potentiels sont exprimés **vs Ag/AgCl (KCl sat.)** ($E_{\text{Ag/AgCl}} = E_{\text{SHE}} - 0.197$ V).
 
-#### Or (Au) — oxydation multi-sites
+#### Or (Au) - oxydation multi-sites
 
 $$2\text{Au} + 6\text{OH}^- \longrightarrow \text{Au}_2\text{O}_3 + 3\text{H}_2\text{O} + 6e^-$$
 
 L'or forme un oxyde réversible à tous les pH. En milieu alcalin, la forme hydroxyde Au(OH)₃ (β-oxyde) est préférentiellement formée. Le plateau d'oxydation est modélisé par 20 sites uniformes.
 
-#### Nickel (Ni) — comportement dépendant du pH
+#### Nickel (Ni) - comportement dépendant du pH
 
 **Dissolution en milieu acide** (pH < 2) :
 
@@ -47,17 +47,17 @@ $$\text{Ni(OH)}_2 + \text{OH}^- \longrightarrow \text{NiOOH} + \text{H}_2\text{O
 
 Ce couple est réversible à pH 13 et partiellement visible à pH 7 (signal faible, chevauche le plateau Au).
 
-#### Cuivre (Cu) — oxydation séquentielle
+#### Cuivre (Cu) - oxydation séquentielle
 
 **Dissolution en milieu acide** (pH < 4) :
 
 $$\text{Cu} \longrightarrow \text{Cu}^{2+} + 2e^- \quad (E^0 = +0.14 \text{ V vs Ag/AgCl})$$
 
-**Première oxydation** — formation de Cu₂O (pH ≥ 7) :
+**Première oxydation** - formation de Cu₂O (pH ≥ 7) :
 
 $$2\text{Cu} + 2\text{OH}^- \longrightarrow \text{Cu}_2\text{O} + \text{H}_2\text{O} + 2e^-$$
 
-**Seconde oxydation** — formation de CuO :
+**Seconde oxydation** - formation de CuO :
 
 $$\text{Cu}_2\text{O} + 2\text{OH}^- \longrightarrow 2\text{CuO} + \text{H}_2\text{O} + 2e^-$$
 
@@ -67,15 +67,15 @@ $$M + H_2O \rightleftharpoons MOH + H^+ + e^-$$
 
 où $M$ = Au, Ni, ou Cu.
 
-### Potentiels standard — pH 1 (H₂SO₄)
+### Potentiels standard - pH 1 (H₂SO₄)
 
 | Métal | Mécanisme | $E^0_{ox}$ (V) | $E^0_{red}$ (V) | $\Delta E_{hyst}$ (mV) |
 |-------|-----------|:--------------:|:---------------:|:----------------------:|
-| **Au** | Oxyde réversible | 1.10 → 1.50 | 0.90 | 200–600 |
-| **Ni** | Dissolution | −0.454 | — | — |
-| **Cu** | Dissolution | +0.14 | — | — |
+| **Au** | Oxyde réversible | 1.10 → 1.50 | 0.90 | 200-600 |
+| **Ni** | Dissolution | −0.454 | - | - |
+| **Cu** | Dissolution | +0.14 | - | - |
 
-### Potentiels standard — pH 7 (tampon phosphate)
+### Potentiels standard - pH 7 (tampon phosphate)
 
 | Métal | Mécanisme | $E^0_{ox}$ (V) | $E^0_{red}$ (V) | Remarque |
 |-------|-----------|:--------------:|:---------------:|----------|
@@ -83,7 +83,7 @@ où $M$ = Au, Ni, ou Cu.
 | **Ni** | Oxyde partiel | +0.78 | +0.59 | Ni(OH)₂/NiOOH, Nernst depuis pH 13 |
 | **Cu** | Oxyde partiel | −0.15 / +0.05 | −0.275 | Cu₂O (60%) + CuO (40%) |
 
-### Potentiels standard — pH 13 (KOH 0.1M)
+### Potentiels standard - pH 13 (KOH 0.1M)
 
 | Métal | Mécanisme | $E^0_{ox}$ (V) | $E^0_{red}$ (V) | Remarque |
 |-------|-----------|:--------------:|:---------------:|----------|
@@ -97,13 +97,13 @@ où $M$ = Au, Ni, ou Cu.
 |-----------|:--:|:--:|:--:|-------|
 | $k_0$ | 2.0 | 5.0 | 5.0 | s⁻¹ |
 | $\Gamma_{max}$ | 4×10⁻⁵ | 3×10⁻⁵ | 3.5×10⁻⁵ | mol/m² |
-| $\alpha$ | 0.5 | 0.5 | 0.5 | — |
+| $\alpha$ | 0.5 | 0.5 | 0.5 | - |
 
 **Note** : $k_0$ est en **s⁻¹** (réaction de surface), pas en m/s !
 
 ---
 
-## 3. Paramètres d'impédance à l'OCP (étude 2 — EIS)
+## 3. Paramètres d'impédance à l'OCP (étude 2 - EIS)
 
 ### 3.1 Potentiel de circuit ouvert (OCP)
 
@@ -136,11 +136,11 @@ Le Rct traduit la vitesse de la réaction faradique à l'OCP. Il est relié au c
 
 Sources : Hamelin 1994 [1] (Au/H₂SO₄), Beverskog 1997 [3,4] (Pourbaix Ni/Cu), Weininger 1963 [8] (Ni/NaOH), Ambrose 1973 [9] (Cu alcalin).
 
-> **Validation** : le Rct mesuré expérimentalement sur Au polycristallin dans H₂SO₄ donne 900–1 300 Ω·cm² (Piela & Wrona, *Electrochim. Acta* 1995). Pour Ni en milieu acide, Saleh *et al.* (*Sci. Rep.* 2025) rapportent 900–990 Ω·cm² — nos 700 Ω sont dans la gamme basse, cohérent avec un pH plus acide.
+> **Validation** : le Rct mesuré expérimentalement sur Au polycristallin dans H₂SO₄ donne 900-1 300 Ω·cm² (Piela & Wrona, *Electrochim. Acta* 1995). Pour Ni en milieu acide, Saleh *et al.* (*Sci. Rep.* 2025) rapportent 900-990 Ω·cm² - nos 700 Ω sont dans la gamme basse, cohérent avec un pH plus acide.
 
 ### 3.3 Film passif et capacité de double couche
 
-**R_film** — Nul à pH 3 (pas de film : dissolution active), il apparaît dès que le métal se passive :
+**R_film** - Nul à pH 3 (pas de film : dissolution active), il apparaît dès que le métal se passive :
 
 | pH | Au | Ni | Cu | Commentaire |
 |:--:|:--:|:--:|:--:|-------------|
@@ -148,9 +148,9 @@ Sources : Hamelin 1994 [1] (Au/H₂SO₄), Beverskog 1997 [3,4] (Pourbaix Ni/Cu)
 | 7 | 0 | 0 ⚠️ | 400 Ω | ⚠️ Ni instable à pH 7 (ACS Omega 2017 [6]) |
 | 11 | 150 Ω | 2 000 Ω | 800 Ω | Films stables sur tous les métaux |
 
-Le R_film de Ni à pH 11 (2 000 Ω) est le plus élevé, reflétant un film Ni(OH)₂/NiOOH compact et protecteur — cohérent avec les mesures de Weininger & Breiter (1963) sur Ni en NaOH.
+Le R_film de Ni à pH 11 (2 000 Ω) est le plus élevé, reflétant un film Ni(OH)₂/NiOOH compact et protecteur - cohérent avec les mesures de Weininger & Breiter (1963) sur Ni en NaOH.
 
-**Q₀ (CPE)** — Capacité de double couche non idéale : 25–50 µF·s^(n-1)/cm² avec exposant $n \approx 0.85$–$0.94$. Ces valeurs sont typiques d'électrodes polycristallines (Lazanas 2023 [11]). L'exposant $n$ diminue avec l'augmentation de Ni et Cu dans l'alliage (surface plus hétérogène).
+**Q₀ (CPE)** - Capacité de double couche non idéale : 25-50 µF·s^(n-1)/cm² avec exposant $n \approx 0.85$-$0.94$. Ces valeurs sont typiques d'électrodes polycristallines (Lazanas 2023 [11]). L'exposant $n$ diminue avec l'augmentation de Ni et Cu dans l'alliage (surface plus hétérogène).
 
 > Les paramètres complets (Q₀, n, σ, Q_film, n_film) et les lois de mélange pour alliages sont détaillés dans l'onglet **Physique** de l'étude EIS.
 
@@ -158,14 +158,14 @@ Le R_film de Ni à pH 11 (2 000 Ω) est le plus élevé, reflétant un film Ni(O
 
 | # | Référence | Donnée utilisée |
 |---|-----------|-----------------|
-| [1] | Hamelin *et al.* (1994) — *Electrochim. Acta* — Au dans H₂SO₄ | Rct Au pH 3, Cdl Au |
-| [2] | Song *et al.* (2025) — *ChemElectroChem* | Cdl vs pH pour Au |
-| [3] | Beverskog & Puigdomenech (1997) — *Corros. Sci.* 39, 969 | Pourbaix Ni, OCP Ni |
-| [4] | Beverskog & Puigdomenech (1997) — *J. Electrochem. Soc.* 144, 3476 | Pourbaix Cu, OCP Cu |
-| [6] | ACS Omega (2017) — DOI: 10.1021/acsomega.6b00448 | Instabilité NiOOH pH 7 |
-| [8] | Weininger & Breiter (1963) — *J. Electrochem. Soc.* 110, 484-490 | Rct Ni, R_film Ni pH 11 |
-| [9] | Ambrose *et al.* (1973) — *J. Electroanal. Chem.* 47, 47 | R_film Cu alcalin |
-| [11] | Lazanas & Prodromidis (2023) — *ACS Meas. Sci. Au* 3(3), 162 | CPE, gammes typiques |
+| [1] | Hamelin *et al.* (1994) - *Electrochim. Acta* - Au dans H₂SO₄ | Rct Au pH 3, Cdl Au |
+| [2] | Song *et al.* (2025) - *ChemElectroChem* | Cdl vs pH pour Au |
+| [3] | Beverskog & Puigdomenech (1997) - *Corros. Sci.* 39, 969 | Pourbaix Ni, OCP Ni |
+| [4] | Beverskog & Puigdomenech (1997) - *J. Electrochem. Soc.* 144, 3476 | Pourbaix Cu, OCP Cu |
+| [6] | ACS Omega (2017) - DOI: 10.1021/acsomega.6b00448 | Instabilité NiOOH pH 7 |
+| [8] | Weininger & Breiter (1963) - *J. Electrochem. Soc.* 110, 484-490 | Rct Ni, R_film Ni pH 11 |
+| [9] | Ambrose *et al.* (1973) - *J. Electroanal. Chem.* 47, 47 | R_film Cu alcalin |
+| [11] | Lazanas & Prodromidis (2023) - *ACS Meas. Sci. Au* 3(3), 162 | CPE, gammes typiques |
 
 ---
 
@@ -195,7 +195,7 @@ $$E_{OER}(pH) = +1.50 - 0.059 \times pH \text{ V}$$
 
 ## 5. Hypothèses et limites des modèles
 
-### Étude 1 — CV oxydes de surface
+### Étude 1 - CV oxydes de surface
 
 | Hypothèse | Justification | Limitation |
 |-----------|---------------|------------|
@@ -205,7 +205,7 @@ $$E_{OER}(pH) = +1.50 - 0.059 \times pH \text{ V}$$
 | Ni partiel à pH 7 | Ni(OH)₂/NiOOH visible mais faible | Signal chevauche plateau Au |
 | Ni/Cu dissolution pH < 2 | Diagramme de Pourbaix | Pas de retour cathodique |
 
-### Étude 2 — EIS à l'OCP
+### Étude 2 - EIS à l'OCP
 
 | Hypothèse | Justification | Limitation |
 |-----------|---------------|------------|
@@ -226,4 +226,4 @@ $$E_{OER}(pH) = +1.50 - 0.059 \times pH \text{ V}$$
 
 ---
 
-*Étude 1 : parameters_oxide.py — Étude 2 : parameters_eis.py (run 04_EIS_with_OCP, 2026-02-06).*
+*Étude 1 : parameters_oxide.py - Étude 2 : parameters_eis.py (run 04_EIS_with_OCP, 2026-02-06).*

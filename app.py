@@ -1,9 +1,9 @@
-"""Application Streamlit — CV et EIS de l'électrode Au avec impuretés Ni et Cu."""
+"""Application Streamlit - CV et EIS de l'électrode Au avec impuretés Ni et Cu."""
 import os
 import streamlit as st
 
 # --- Configuration de la page (DOIT être en premier) ---
-st.set_page_config(page_title="CV & EIS — Au/Ni/Cu Electrode", layout="wide")
+st.set_page_config(page_title="CV & EIS - Au/Ni/Cu Electrode", layout="wide")
 
 # --- Imports locaux ---
 from config import ASSETS_PATH, CSS_PATH, DATA_PATH
@@ -182,7 +182,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown(t("version_info"))
 st.sidebar.markdown("")
 st.sidebar.markdown("")
-st.sidebar.markdown("© 2025 Eric QUEAU — [MIT License](https://opensource.org/licenses/MIT)")
+st.sidebar.markdown("© 2025 Eric QUEAU - [MIT License](https://opensource.org/licenses/MIT)")
 
 # --- Déterminer la page active ---
 # Priorité : modèles > annexes > général
@@ -283,7 +283,7 @@ elif selected_page == model_pages[0]:
                 for col, f, sim_label in [(c1, f1, t("sim_1")), (c2, f2, t("sim_2"))]:
                     with col:
                         if f and os.path.exists(f["png_cv"]):
-                            st.markdown(f"**{sim_label}** — Run {f['run_id']}")
+                            st.markdown(f"**{sim_label}** - Run {f['run_id']}")
                             st.image(f["png_cv"], use_container_width=True)
                         else:
                             st.warning(t("image_unavailable"))
@@ -338,7 +338,7 @@ elif selected_page == model_pages[1]:
                 for col, f, sim_label in [(c1, f1, t("sim_1")), (c2, f2, t("sim_2"))]:
                     with col:
                         if f and os.path.exists(f["nyquist_png"]):
-                            st.markdown(f"**{sim_label}** — Run {f['run']} ({f['label']})")
+                            st.markdown(f"**{sim_label}** - Run {f['run']} ({f['label']})")
                             st.image(f["nyquist_png"], use_container_width=True)
                         else:
                             st.warning(t("image_unavailable"))
@@ -362,7 +362,7 @@ elif selected_page == model_pages[1]:
                     with col:
                         if f and f.get("metrics"):
                             m = f["metrics"]
-                            st.markdown(f"**{sim_label}** — Run {f['run']}")
+                            st.markdown(f"**{sim_label}** - Run {f['run']}")
                             mc1, mc2, mc3 = st.columns(3)
                             mc1.metric(t("lbl_circuit"), m["circuit"])
                             mc2.metric(t("lbl_Eocp"), f"{m['E_ocp_V']:+.3f} V" if isinstance(m['E_ocp_V'], (int, float)) else str(m['E_ocp_V']))
@@ -377,11 +377,11 @@ elif selected_page == model_pages[1]:
             st.info(t("placeholder_coming_soon"))
 
     with tabs_eis[3]:
-        st.markdown("### Analyse de l'étude 2 — EIS électrode Au/Ni/Cu")
+        st.markdown("### Analyse de l'étude 2 - EIS électrode Au/Ni/Cu")
 
         st.markdown("""
-L'étude paramétrique de 27 simulations EIS (Ni/Cu = 0, 10, 30 %, pH = 3, 7, 11) — alignée
-avec l'étude CV — met en évidence les tendances suivantes :
+L'étude paramétrique de 27 simulations EIS (Ni/Cu = 0, 10, 30 %, pH = 3, 7, 11) - alignée
+avec l'étude CV - met en évidence les tendances suivantes :
 
 **Potentiel de circuit ouvert (OCP)** :
 L'EIS est simulée à l'OCP, estimé par moyenne pondérée des E_ocp de chaque métal pur
@@ -391,9 +391,9 @@ non dérivées de Butler-Volmer.
 - Ni/Cu tirent l'OCP vers des valeurs plus négatives (Ni : −0.25 V, Cu : +0.02 V à pH 3)
 
 **Effet du pH sur Rct** :
-- pH 3 : Rct faible (~800–1280 Ω) — dissolution active, cinétique rapide
-- pH 7 : Rct maximal (~3100–4700 Ω) — passivation partielle, cinétique lente
-- pH 11 : Rct élevé (~2270–6000 Ω) — films passifs sur tous les métaux
+- pH 3 : Rct faible (~800-1280 Ω) - dissolution active, cinétique rapide
+- pH 7 : Rct maximal (~3100-4700 Ω) - passivation partielle, cinétique lente
+- pH 11 : Rct élevé (~2270-6000 Ω) - films passifs sur tous les métaux
 
 **Effet du Ni** : augmente Rct à pH 11 de façon marquée (Ni(OH)₂/NiOOH très protecteur,
 R_film intrinsèque = 2000 Ω). Au70%Ni30% atteint Rct ≈ 5170 Ω à pH 11.

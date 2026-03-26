@@ -1,10 +1,10 @@
-"""Traductions et gestion de la langue — Électrode Au/Ni/Cu."""
+"""Traductions et gestion de la langue - Électrode Au/Ni/Cu."""
 import streamlit as st
 
 TRANSLATIONS = {
     "fr": {
-        "title": "CV et EIS — Électrode Au avec impuretés Ni et Cu",
-        "sidebar_title": "CV et EIS — Électrode Au/Ni/Cu",
+        "title": "CV et EIS - Électrode Au avec impuretés Ni et Cu",
+        "sidebar_title": "CV et EIS - Électrode Au/Ni/Cu",
         "gen_header": "Général",
         "models_header": "Résultats de modélisation",
         "annex_header": "Annexes",
@@ -13,7 +13,7 @@ TRANSLATIONS = {
         "annex_pages": ["Conclusion et perspectives", "Lexique", "Équations clés", "Un peu d'histoire", "Références bibliographiques"],
         "tabs_cv_oxide": ["Physique", "Code", "Résultats"],
         "tabs_eis": ["Physique", "Code", "Résultats", "Analyse"],
-        "version_info": """**Version 2.1.2** — Dec 2025
+        "version_info": """**Version 2.1.2** - Dec 2025
 
 **Nouveautés :**
 - Étude paramétrique EIS
@@ -52,11 +52,11 @@ TRANSLATIONS = {
         "chat_error": "Erreur de connexion à l'API.",
         "chat_clear": "Effacer",
         "chat_api_missing": "Clé API manquante. Configurez GROQ_API_KEY.",
-        "chat_disclaimer": "⚠️ Réponse générée par IA — peut contenir des erreurs ou omissions. Vérifiez toujours les informations auprès des sources scientifiques reconnues.",
+        "chat_disclaimer": "⚠️ Réponse générée par IA - peut contenir des erreurs ou omissions. Vérifiez toujours les informations auprès des sources scientifiques reconnues.",
     },
     "en": {
-        "title": "CV & EIS — Au Electrode with Ni and Cu Impurities",
-        "sidebar_title": "CV & EIS — Au/Ni/Cu Electrode",
+        "title": "CV & EIS - Au Electrode with Ni and Cu Impurities",
+        "sidebar_title": "CV & EIS - Au/Ni/Cu Electrode",
         "gen_header": "General",
         "models_header": "Modeling Results",
         "annex_header": "Appendices",
@@ -65,7 +65,7 @@ TRANSLATIONS = {
         "annex_pages": ["Conclusion and Perspectives", "Glossary", "Key Equations", "A Bit of History", "Bibliographical References"],
         "tabs_cv_oxide": ["Physics", "Code", "Results"],
         "tabs_eis": ["Physics", "Code", "Results", "Analysis"],
-        "version_info": """**Version 2.1.2** — Dec 2025
+        "version_info": """**Version 2.1.2** - Dec 2025
 
 **New Features:**
 - EIS parametric study
@@ -104,7 +104,7 @@ TRANSLATIONS = {
         "chat_error": "API connection error.",
         "chat_clear": "Clear",
         "chat_api_missing": "API key missing. Configure GROQ_API_KEY.",
-        "chat_disclaimer": "⚠️ AI-generated response — may contain errors or omissions. Always verify information against recognized scientific sources.",
+        "chat_disclaimer": "⚠️ AI-generated response - may contain errors or omissions. Always verify information against recognized scientific sources.",
     }
 }
 

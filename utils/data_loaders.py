@@ -1,4 +1,4 @@
-"""Fonctions de chargement des données — Électrode Au/Ni/Cu."""
+"""Fonctions de chargement des données - Électrode Au/Ni/Cu."""
 import json
 import os
 import pandas as pd

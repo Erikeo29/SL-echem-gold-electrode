@@ -30,12 +30,12 @@
 
 Study 1 models purely surface reactions: coverage $\theta$ is uniform across the electrode. Current depends on $d\theta/dt$ and hysteresis ($E^0_{ox} \neq E^0_{red}$) captures oxide nucleation.
 
-Study 2 probes the same Au/Ni/Cu electrode at **equilibrium** via a frequency perturbation. It separates resistive contributions (Rs, Rct, R_film) from capacitive ones (Cdl, CPE) — a decomposition impossible through CV.
+Study 2 probes the same Au/Ni/Cu electrode at **equilibrium** via a frequency perturbation. It separates resistive contributions (Rs, Rct, R_film) from capacitive ones (Cdl, CPE) - a decomposition impossible through CV.
 
 ### Reversibility
 
 - Study 1: oxide hysteresis always imposes $\Delta E_p > 100$ mV.
-- Study 2: no ΔEp concept — reversibility is read from $R_{ct}$ and passive film presence.
+- Study 2: no ΔEp concept - reversibility is read from $R_{ct}$ and passive film presence.
 
 ---
 
