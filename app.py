@@ -6,24 +6,6 @@ import streamlit.components.v1 as components
 # --- Configuration de la page (DOIT être en premier) ---
 st.set_page_config(page_title="CV & EIS - Au/Ni/Cu Electrode", layout="wide")
 
-# --- Auto-scroll to top on page change ---
-import streamlit.components.v1 as _components
-_pid = f"{st.session_state.get('nav_gen_idx')}_{st.session_state.get('nav_model_idx')}_{st.session_state.get('nav_annex_idx')}"
-if st.session_state.get("_last_page") != _pid:
-    st.session_state["_last_page"] = _pid
-    _components.html(
-        '<script>'
-        'function scrollTop(){'
-        'var e=window.parent.document;'
-        'var targets=["section.main","[data-testid=stAppViewContainer]",".main"];'
-        'targets.forEach(function(s){var el=e.querySelector(s);if(el)el.scrollTo(0,0);});'
-        'e.scrollingElement.scrollTo(0,0);'
-        '}'
-        'scrollTop();setTimeout(scrollTop,100);setTimeout(scrollTop,300);'
-        '</script>',
-        height=0,
-    )
-
 # --- Imports locaux ---
 from config import ASSETS_PATH, CSS_PATH, DATA_PATH
 from utils.translations import TRANSLATIONS, get_language, t
@@ -68,49 +50,8 @@ def load_custom_css():
 st.markdown(load_custom_css(), unsafe_allow_html=True)
 
 
-# --- Callbacks pour Navigation (INDEX-based) ---
-def on_change_gen():
-    selected = st.session_state.get('_radio_gen')
-    if selected is not None:
-        gen_pages = TRANSLATIONS[st.session_state.get('lang', 'fr')]["gen_pages"]
-        try:
-            st.session_state.nav_gen_idx = gen_pages.index(selected)
-        except ValueError:
-            st.session_state.nav_gen_idx = 0
-    st.session_state.nav_model_idx = None
-    st.session_state.nav_annex_idx = None
-
-
-def on_change_model():
-    selected = st.session_state.get('_radio_model')
-    if selected is not None:
-        model_pages = TRANSLATIONS[st.session_state.get('lang', 'fr')]["model_pages"]
-        try:
-            st.session_state.nav_model_idx = model_pages.index(selected)
-        except ValueError:
-            st.session_state.nav_model_idx = 0
-    st.session_state.nav_gen_idx = None
-    st.session_state.nav_annex_idx = None
-
-
-def on_change_annex():
-    selected = st.session_state.get('_radio_annex')
-    if selected is not None:
-        annex_pages = TRANSLATIONS[st.session_state.get('lang', 'fr')]["annex_pages"]
-        try:
-            st.session_state.nav_annex_idx = annex_pages.index(selected)
-        except ValueError:
-            st.session_state.nav_annex_idx = 0
-    st.session_state.nav_gen_idx = None
-    st.session_state.nav_model_idx = None
-
-
 # --- Initialisation Centralisée des États ---
 DEFAULT_SESSION_STATES = {
-    # Navigation (stocke INDEX, pas texte - indépendant de la langue)
-    'nav_gen_idx': 0,
-    'nav_model_idx': None,
-    'nav_annex_idx': None,
     # CV oxide Visualization
     'run_oxide_results': False,
     'files_oxide_results': (None, None),
@@ -125,104 +66,14 @@ for key, default in DEFAULT_SESSION_STATES.items():
     if key not in st.session_state:
         st.session_state[key] = default
 
-# Initialisation: Accueil (index 0) au premier chargement
-if (st.session_state.nav_gen_idx is None and
-    st.session_state.nav_model_idx is None and
-    st.session_state.nav_annex_idx is None):
-    st.session_state.nav_gen_idx = 0
-
-
-# --- Barre Latérale ---
-
-# Sélecteur de langue
-old_lang = st.session_state.get('lang', 'fr')
-lang_selection = st.sidebar.radio(
-    "Language",
-    ["Français", "English"],
-    horizontal=True,
-    label_visibility="collapsed",
-    index=0 if old_lang == "fr" else 1,
-)
-new_lang = "fr" if "Français" in lang_selection else "en"
-
-# Si la langue change, simplement rerun (les index sont indépendants de la langue)
-if new_lang != old_lang:
-    st.session_state.lang = new_lang
-    st.rerun()
-
-st.session_state.lang = new_lang
-
-st.sidebar.title(t("sidebar_title"))
-st.sidebar.markdown("---")
-
-# Navigation par groupes avec callbacks INDEX-based
-gen_pages = t("gen_pages")
-model_pages = t("model_pages")
-annex_pages = t("annex_pages")
-
-st.sidebar.subheader(t("gen_header"))
-nav_gen = st.sidebar.radio(
-    "Nav Gen",
-    gen_pages,
-    key="_radio_gen",
-    index=st.session_state.nav_gen_idx,
-    on_change=on_change_gen,
-    label_visibility="collapsed"
-)
-
-st.sidebar.markdown("---")
-st.sidebar.subheader(t("models_header"))
-nav_model = st.sidebar.radio(
-    "Nav Models",
-    model_pages,
-    key="_radio_model",
-    index=st.session_state.nav_model_idx,
-    on_change=on_change_model,
-    label_visibility="collapsed"
-)
-
-st.sidebar.markdown("---")
-st.sidebar.subheader(t("annex_header"))
-nav_annex = st.sidebar.radio(
-    "Nav Annex",
-    annex_pages,
-    key="_radio_annex",
-    index=st.session_state.nav_annex_idx,
-    on_change=on_change_annex,
-    label_visibility="collapsed"
-)
-
-# --- Chatbot dans la Sidebar ---
-if is_chatbot_enabled():
-    st.sidebar.markdown("---")
-    render_chatbot()
-
-st.sidebar.markdown("---")
-st.sidebar.markdown(t("version_info"))
-st.sidebar.markdown("")
-st.sidebar.markdown("")
-st.sidebar.markdown("© 2025 Eric QUEAU - [MIT License](https://opensource.org/licenses/MIT)")
-
-# --- Déterminer la page active ---
-# Priorité : modèles > annexes > général
-selected_page = None
-if st.session_state.nav_model_idx is not None:
-    selected_page = model_pages[st.session_state.nav_model_idx]
-elif st.session_state.nav_annex_idx is not None:
-    selected_page = annex_pages[st.session_state.nav_annex_idx]
-elif st.session_state.nav_gen_idx is not None:
-    selected_page = gen_pages[st.session_state.nav_gen_idx]
-else:
-    selected_page = gen_pages[0]
-
-
 
 # ===========================================================================
-# PAGES
+# FONCTIONS PAGE (11 pages)
 # ===========================================================================
 
-# ===== PAGE ACCUEIL =====
-if selected_page == gen_pages[0]:
+# ----- GÉNÉRAL -----
+
+def page_accueil():
     st.title(t("title"))
 
     # --- Layout côte-à-côte : note auteur (gauche) + graphes (droite) ---
@@ -244,20 +95,22 @@ if selected_page == gen_pages[0]:
     if len(parts) > 1:
         st.markdown("---" + parts[1])
 
-# ===== PAGE INTRODUCTION =====
-elif selected_page == gen_pages[1]:
+
+def page_introduction():
     st.markdown(load_file_content("intro/intro_cv.md"))
 
-# ===== PAGE DONNÉES ÉLECTROCHIMIQUES =====
-elif selected_page == gen_pages[2]:
+
+def page_data_electrochim():
     st.markdown(load_file_content("data_electrochim/data_electrochim.md"))
 
-# ===== PAGE COMPARAISON =====
-elif selected_page == gen_pages[3]:
+
+def page_comparaison():
     st.markdown(load_file_content("intro/comparaison_cv.md"))
 
-# ===== ÉTUDE 1 - CV électrode Au/Ni/Cu =====
-elif selected_page == model_pages[0]:
+
+# ----- MODÉLISATION -----
+
+def page_study_1():
     st.title(t("title_study_1"))
 
     tabs_oxide = st.tabs(t("tabs_cv_oxide"))
@@ -310,8 +163,8 @@ elif selected_page == model_pages[0]:
         else:
             st.info(t("placeholder_coming_soon"))
 
-# ===== ÉTUDE 2 - EIS électrode Au/Ni/Cu =====
-elif selected_page == model_pages[1]:
+
+def page_study_2():
     st.title(t("title_study_2"))
 
     tabs_eis = st.tabs(t("tabs_eis"))
@@ -426,21 +279,147 @@ avec un film passif mixte (R_film = 900 Ω), cohérent avec les diagrammes de Po
 """)
 
 
-# ===== PAGES ANNEXES =====
-elif selected_page in annex_pages:
-    idx = annex_pages.index(selected_page)
-    annex_files = [
-        "conclusion/cv_conclusion.md",
-        "lexique/cv_lexique.md",
-        "equations/cv_equations.md",
-        "histoire/cv_histoire.md",
-        "biblio/cv_biblio.md"
-    ]
+# ----- ANNEXES -----
 
-    try:
-        st.markdown(load_file_content(annex_files[idx]))
-    except Exception as e:
-        st.error(f"Erreur de chargement: {e}")
+def page_conclusion():
+    st.markdown(load_file_content("conclusion/cv_conclusion.md"))
+
+
+def page_lexique():
+    st.markdown(load_file_content("lexique/cv_lexique.md"))
+
+
+def page_equations():
+    st.markdown(load_file_content("equations/cv_equations.md"))
+
+
+def page_histoire():
+    st.markdown(load_file_content("histoire/cv_histoire.md"))
+
+
+def page_biblio():
+    st.markdown(load_file_content("biblio/cv_biblio.md"))
+
+
+# ===========================================================================
+# BARRE LATÉRALE + NAVIGATION (st.navigation position=hidden + page_link)
+# ===========================================================================
+
+# Langue
+old_lang = st.session_state.get("lang", "fr")
+lang_selection = st.sidebar.radio(
+    "Language",
+    ["Français", "English"],
+    horizontal=True,
+    label_visibility="collapsed",
+    index=0 if old_lang == "fr" else 1,
+)
+new_lang = "fr" if "Français" in lang_selection else "en"
+
+if new_lang != old_lang:
+    st.session_state.lang = new_lang
+    st.rerun()
+st.session_state.lang = new_lang
+
+st.sidebar.title(t("sidebar_title"))
+st.sidebar.markdown("---")
+
+# Listes de pages traduites
+gen_pages = t("gen_pages")
+model_pages = t("model_pages")
+annex_pages = t("annex_pages")
+
+# Construction des objets st.Page (url_path stable pour survie au changement de langue)
+_GEN_PAGES = [
+    st.Page(func, title=title, url_path=url, default=(url == "home"))
+    for func, title, url in zip(
+        [page_accueil, page_introduction, page_data_electrochim, page_comparaison],
+        gen_pages,
+        ["home", "introduction", "electrochemical-data", "study-comparison"],
+    )
+]
+_MODEL_PAGES = [
+    st.Page(func, title=title, url_path=url)
+    for func, title, url in zip(
+        [page_study_1, page_study_2],
+        model_pages,
+        ["cv-oxide", "eis-oxide"],
+    )
+]
+_ANNEX_PAGES = [
+    st.Page(func, title=title, url_path=url)
+    for func, title, url in zip(
+        [page_conclusion, page_lexique, page_equations, page_histoire, page_biblio],
+        annex_pages,
+        ["conclusion", "glossary", "equations", "history", "bibliography"],
+    )
+]
+
+# Routing via st.navigation (caché - sidebar custom ci-dessous)
+nav = st.navigation(
+    {
+        t("gen_header"): _GEN_PAGES,
+        t("models_header"): _MODEL_PAGES,
+        t("annex_header"): _ANNEX_PAGES,
+    },
+    position="hidden",
+)
+
+# Sidebar custom avec st.page_link (fiable avec st.navigation)
+_GROUPS = [
+    (t("gen_header"), _GEN_PAGES),
+    (t("models_header"), _MODEL_PAGES),
+    (t("annex_header"), _ANNEX_PAGES),
+]
+
+for header, pages in _GROUPS:
+    st.sidebar.subheader(header)
+    for page in pages:
+        is_active = page is nav
+        st.sidebar.page_link(
+            page,
+            label=f"**{page.title}**" if is_active else page.title,
+            icon=":material/arrow_right:" if is_active else None,
+            use_container_width=True,
+        )
+    st.sidebar.markdown("---")
+
+# --- Chatbot dans la Sidebar ---
+if is_chatbot_enabled():
+    render_chatbot()
+    st.sidebar.markdown("---")
+
+st.sidebar.markdown(t("version_info"))
+st.sidebar.markdown("")
+st.sidebar.markdown("© 2025 Eric QUEAU - [MIT License](https://opensource.org/licenses/MIT)")
+
+# --- Forcer l'accueil à chaque nouvelle session ---
+if "app_initialized" not in st.session_state:
+    st.session_state.app_initialized = True
+    if nav != _GEN_PAGES[0]:
+        st.switch_page(_GEN_PAGES[0])
+
+# --- Exécution de la page sélectionnée ---
+
+# --- Auto-scroll to top on page change ---
+_page_id = getattr(nav, "url_path", nav.title)
+if st.session_state.get("_last_page") != _page_id:
+    st.session_state["_last_page"] = _page_id
+    components.html(
+        (
+            '<script>'
+            'function scrollTop(){'
+            'var e=window.parent.document;'
+            'var targets=["section.main","[data-testid=stAppViewContainer]",".main"];'
+            'targets.forEach(function(s){var el=e.querySelector(s);if(el)el.scrollTo(0,0);});'
+            'e.scrollingElement.scrollTo(0,0);'
+            '}'
+            'scrollTop();setTimeout(scrollTop,100);setTimeout(scrollTop,300);'
+            '</script>'
+        ),
+        height=0,
+    )
+nav.run()
 
 # --- Ancre de fin de page ---
 st.markdown('<div id="bottom"></div>', unsafe_allow_html=True)
