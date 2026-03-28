@@ -4,6 +4,7 @@ import streamlit as st
 TRANSLATIONS = {
     "fr": {
         "title": "CV et EIS - Électrode Au avec impuretés Ni et Cu",
+        "hero_subtitle": "Oxydes de surface Au, Ni, Cu - réponse électrochimique en milieu acide, neutre et alcalin",
         "sidebar_title": "CV et EIS - Électrode Au/Ni/Cu",
         "gen_header": "Général",
         "models_header": "Résultats de modélisation",
@@ -56,6 +57,7 @@ TRANSLATIONS = {
     },
     "en": {
         "title": "CV & EIS - Au Electrode with Ni and Cu Impurities",
+        "hero_subtitle": "Au, Ni, Cu surface oxides - electrochemical response in acidic, neutral and alkaline media",
         "sidebar_title": "CV & EIS - Au/Ni/Cu Electrode",
         "gen_header": "General",
         "models_header": "Modeling Results",

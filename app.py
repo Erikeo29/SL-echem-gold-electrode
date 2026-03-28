@@ -74,7 +74,12 @@ for key, default in DEFAULT_SESSION_STATES.items():
 # ----- GÉNÉRAL -----
 
 def page_accueil():
-    st.title(t("title"))
+    st.markdown(f"""
+    <div class="hero-banner">
+        <h1>{t("title")}</h1>
+        <p>{t("hero_subtitle")}</p>
+    </div>
+    """, unsafe_allow_html=True)
 
     # --- Layout côte-à-côte : note auteur (gauche) + graphes (droite) ---
     accueil_content = load_file_content("accueil/accueil.md")
