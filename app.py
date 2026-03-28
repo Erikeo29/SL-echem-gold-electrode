@@ -6,6 +6,24 @@ import streamlit.components.v1 as components
 # --- Configuration de la page (DOIT être en premier) ---
 st.set_page_config(page_title="CV & EIS - Au/Ni/Cu Electrode", layout="wide")
 
+# --- Auto-scroll to top on page change ---
+import streamlit.components.v1 as _components
+_pid = f"{st.session_state.get('nav_gen_idx')}_{st.session_state.get('nav_model_idx')}_{st.session_state.get('nav_annex_idx')}"
+if st.session_state.get("_last_page") != _pid:
+    st.session_state["_last_page"] = _pid
+    _components.html(
+        '<script>'
+        'function scrollTop(){'
+        'var e=window.parent.document;'
+        'var targets=["section.main","[data-testid=stAppViewContainer]",".main"];'
+        'targets.forEach(function(s){var el=e.querySelector(s);if(el)el.scrollTo(0,0);});'
+        'e.scrollingElement.scrollTo(0,0);'
+        '}'
+        'scrollTop();setTimeout(scrollTop,100);setTimeout(scrollTop,300);'
+        '</script>',
+        height=0,
+    )
+
 # --- Imports locaux ---
 from config import ASSETS_PATH, CSS_PATH, DATA_PATH
 from utils.translations import TRANSLATIONS, get_language, t
@@ -197,24 +215,6 @@ elif st.session_state.nav_gen_idx is not None:
 else:
     selected_page = gen_pages[0]
 
-# --- Auto-scroll to top on page change ---
-_page_id = f"{st.session_state.nav_gen_idx}_{st.session_state.nav_model_idx}_{st.session_state.nav_annex_idx}"
-if st.session_state.get("_last_page") != _page_id:
-    st.session_state["_last_page"] = _page_id
-    components.html(
-        (
-            '<script>'
-            'function scrollTop(){'
-            'var e=window.parent.document;'
-            'var targets=["section.main","[data-testid=stAppViewContainer]",".main"];'
-            'targets.forEach(function(s){var el=e.querySelector(s);if(el)el.scrollTo(0,0);});'
-            'e.scrollingElement.scrollTo(0,0);'
-            '}'
-            'scrollTop();setTimeout(scrollTop,100);setTimeout(scrollTop,300);'
-            '</script>'
-        ),
-        height=0,
-    )
 
 
 # ===========================================================================
