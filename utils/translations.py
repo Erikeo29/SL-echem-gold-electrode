@@ -3,7 +3,7 @@ import streamlit as st
 
 TRANSLATIONS = {
     "fr": {
-        "title": "CV et EIS - Électrode Au avec impuretés Ni et Cu",
+        "title": "CV et EIS - Électrode or avec impuretés nickel et cuivre",
         "hero_subtitle": "Oxydes de surface Au, Ni, Cu - réponse électrochimique en milieu acide, neutre et alcalin",
         "sidebar_title": "CV et EIS - Électrode Au/Ni/Cu",
         "gen_header": "Général",
@@ -56,7 +56,7 @@ TRANSLATIONS = {
         "chat_disclaimer": "⚠️ Réponse générée par IA - peut contenir des erreurs ou omissions. Vérifiez toujours les informations auprès des sources scientifiques reconnues.",
     },
     "en": {
-        "title": "CV & EIS - Au Electrode with Ni and Cu Impurities",
+        "title": "CV & EIS - Gold electrode with nickel and copper impurities",
         "hero_subtitle": "Au, Ni, Cu surface oxides - electrochemical response in acidic, neutral and alkaline media",
         "sidebar_title": "CV & EIS - Au/Ni/Cu Electrode",
         "gen_header": "General",
