@@ -6,7 +6,3 @@ __pycache__/
 env/
 venv/
 .streamlit/secrets.toml
-
-.plugin-config/
-.claude/
-CLAUDE.md
